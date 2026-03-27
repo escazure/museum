@@ -83,23 +83,8 @@ void run(){
 	SpotLight spot_light;
 	setup_lights(point_light, point_light2, dir_light, spot_light);
 
-	unsigned int ubo;
-	glGenBuffers(1, &ubo);
-	glBindBuffer(GL_UNIFORM_BUFFER, ubo);
-	glBufferData(GL_UNIFORM_BUFFER, 2*sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
-	glBindBuffer(GL_UNIFORM_BUFFER, 0);
-	glBindBufferBase(GL_UNIFORM_BUFFER, 0, ubo);
-
-	unsigned int uboLight;
-	glGenBuffers(1, &uboLight);
-	glBindBuffer(GL_UNIFORM_BUFFER, uboLight);
-	glBufferData(GL_UNIFORM_BUFFER, 272, NULL, GL_STATIC_DRAW); // PointLight = 64*2, DirLight = 64, SpotLight = 80
-	glBindBufferBase(GL_UNIFORM_BUFFER, 1, uboLight);
-
-	glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(PointLight), &point_light);
-	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight), sizeof(PointLight), &point_light2);
-	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight)*2, sizeof(DirLight), &dir_light);
-	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight)*2 + sizeof(DirLight), sizeof(SpotLight), &spot_light);
+	unsigned int matrix_ubo, light_ubo;
+	setup_ubos(matrix_ubo, light_ubo, point_light, point_light2, dir_light, spot_light);
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
@@ -122,92 +107,16 @@ void run(){
 			lightPos.z = glm::cos(rotation_offset) * 3;
 		}
 
-		glm::mat4 projection = glm::perspective(glm::radians(camera.fov), g_context.win_width/g_context.win_height, 0.01f, 200.0f);
-		glBindBuffer(GL_UNIFORM_BUFFER, ubo);
-		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
-		glBindBuffer(GL_UNIFORM_BUFFER, 0);
-		
-		glm::mat4 view = camera.get_view_mat();
-		glBindBuffer(GL_UNIFORM_BUFFER, ubo);
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
-		glBindBuffer(GL_UNIFORM_BUFFER, 0);
-
-		glBindBuffer(GL_UNIFORM_BUFFER, uboLight);	
-		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::vec3), glm::value_ptr(lightPos));
-		glBindBuffer(GL_UNIFORM_BUFFER, 0);
+		// Update ubos //
+		update_ubos(matrix_ubo, light_ubo, lightPos);
+		// ------------------- //
 
 		// Render scene to depth texture //
 		glViewport(0, 0, g_context.shadow_width, g_context.shadow_height);
 		glBindFramebuffer(GL_FRAMEBUFFER, depth_map_fbo);
 		glClear(GL_DEPTH_BUFFER_BIT);
-	
-		sr.depth_shader.use();
-		sr.depth_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
-		
-		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(6.0f, -2.5f, 6.0f));
-		model = glm::scale(model, glm::vec3(10.0f, 1.0f, 10.0f));
-		sr.depth_shader.set_mat4("model", model);	
-		sr.scene_floor.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		sr.depth_shader.set_mat4("model", model);
-		sr.monkey.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);	
-		model = glm::translate(model, glm::vec3(6.0f, 0.0f, 0.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.monkey.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);	
-		model = glm::translate(model, glm::vec3(12.0f, 0.0f, 0.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.monkey.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.pedestal.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(6.0f, -2.0f, 0.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.pedestal.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(12.0f, -2.0f, 0.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.pedestal.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 12.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.pedestal.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(6.0f, -2.0f, 12.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.pedestal.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(12.0f, -2.0f, 12.0f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.pedestal.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(12.0f, 0.1f, 12.0f));
-		model = glm::rotate(model, (float)glm::radians(glfwGetTime() * 5.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.5));
-		sr.depth_shader.set_mat4("model", model);
-		sr.cube.Draw(sr.depth_shader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 12.0f));
-		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
-		sr.depth_shader.set_mat4("model", model);
-		sr.planet.Draw(sr.depth_shader);
+		render_depth_map(sr, lightSpaceMatrix);
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	
 		glViewport(0,0,(int)g_context.win_width, (int)g_context.win_height);
 
 		// Render scene normally //
@@ -219,14 +128,14 @@ void run(){
 
 		// Draw floor //
 		sr.phong_shader.use();
-		model = glm::mat4(1.0f);
+		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(6.0f, -2.5f, 6.0f));
 		model = glm::scale(model, glm::vec3(10.0f, 1.0f, 10.0f));
 		sr.phong_shader.set_mat4("model", model);	
 		sr.phong_shader.set_bool("hasSpecular", false);
 		sr.phong_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
 		sr.phong_shader.set_int("depth_map", 1);
-		sr.phong_shader.set_vec3("specular_value", glm::vec3(0.05));
+		sr.phong_shader.set_vec3("specular_value", glm::vec3(0.1));
 		sr.phong_shader.set_float("material.shininess", 64.0);
 		sr.phong_shader.set_float("dirLightIntensity", 1.0);
 		sr.phong_shader.set_float("pointLightIntensity", 1.0);
@@ -238,8 +147,6 @@ void run(){
 		sr.scene_floor.Draw(sr.phong_shader);	
 
 		// Draw monkey with point light //
-		glActiveTexture(GL_TEXTURE1);
-		glBindTexture(GL_TEXTURE_2D, depth_map);
 		sr.phong_shader.use();
 		if(g_context.use_blinn)
 			sr.phong_shader.set_float("material.shininess", 128.0f);
@@ -249,11 +156,10 @@ void run(){
 		sr.phong_shader.set_bool("hasSpecular", true);
 		sr.phong_shader.set_bool("showNormals", g_context.show_normals);
 		sr.phong_shader.set_bool("useBlinn", g_context.use_blinn);
-		sr.phong_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
 
 		model = glm::mat4(1.0f);
 		sr.phong_shader.set_mat4("model", model);
-		sr.phong_shader.set_float("dirLightIntensity", 0.0);
+		sr.phong_shader.set_float("dirLightIntensity", 0.1);
 		sr.phong_shader.set_float("pointLightIntensity", 1.0);
 		sr.phong_shader.set_float("spotLightIntensity", 0.0);
 		sr.monkey.Draw(sr.phong_shader);
@@ -274,7 +180,7 @@ void run(){
 		model = glm::mat4(1.0f);	
 		model = glm::translate(model, glm::vec3(12.0f, 0.0f, 0.0f));
 		sr.phong_shader.set_mat4("model", model);
-		sr.phong_shader.set_float("dirLightIntensity", 0.0);
+		sr.phong_shader.set_float("dirLightIntensity", 0.1);
 		sr.phong_shader.set_float("pointLightIntensity", 0.0);
 		sr.phong_shader.set_float("spotLightIntensity", 1.0);
 		sr.monkey.Draw(sr.phong_shader);
@@ -389,13 +295,14 @@ void run(){
 		sr.light_cube.Draw(sr.light_cube_shader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(dirLightPos + glm::vec3(0.0f, 0.0f, 12.0f)));
+		model = glm::translate(model, glm::vec3(dirLightPos + glm::vec3(0.0f, 0.0f, 11.0f)));
 		model = glm::scale(model, light_cube_size);
 		sr.light_cube_shader.set_mat4("model", model);
 		sr.light_cube_shader.set_vec3("lightColor", lightColorNeutral);
 		sr.light_cube.Draw(sr.light_cube_shader);
 		// --------------------- //	
 
+		// Skybox //
 		glDepthFunc(GL_LEQUAL);
 		glDisable(GL_CULL_FACE);
 		sr.skybox_shader.use();
@@ -411,30 +318,14 @@ void run(){
 		// Draw snowflakes particles //
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		sr.particle_shader.use();
-		sr.particle_shader.set_float("time", glfwGetTime());
-		sr.particle_shader.set_float("cone_height", g_context.cone_height); 
-		sr.particle_shader.set_float("top_radius", g_context.top_radius);
-		glBindVertexArray(particle_vao);
-		glDrawArraysInstanced(GL_POINTS, 0, 1, g_context.particle_count);
-		glBindVertexArray(0);
+		render_particles(sr, particle_vao);
 		glDisable(GL_BLEND);
 		// --------------------- //
 
 		// Post processing //
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		sr.screen_shader.use();
-		sr.screen_shader.set_int("screen", 0);
-		sr.screen_shader.set_int("mode", g_context.post_processing_mode);
-		sr.screen_shader.set_float("gamma", 2.2f);
-		sr.screen_shader.set_bool("correct_gamma", g_context.use_gamma_correction);
-
-		glBindVertexArray(quad_vao);
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, quad_texture);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		glBindVertexArray(0);
+		render_postprocess(sr, quad_vao, quad_texture);
 		// --------------------- //
 
 		glfwSwapBuffers(g_context.window);
@@ -780,3 +671,129 @@ void setup_lights(PointLight& p1, PointLight& p2, DirLight& dir, SpotLight& spot
 	spot.diffuse = glm::vec4(lightColorCold * 0.5f, 0.08f);
 	spot.specular = glm::vec4(lightColorCold * 0.7f, 0.03f);
 }
+
+void setup_ubos(unsigned int& matrix_ubo, unsigned int& light_ubo, PointLight& p1, PointLight& p2, DirLight& dir, SpotLight& spot){
+	glGenBuffers(1, &matrix_ubo);
+	glBindBuffer(GL_UNIFORM_BUFFER, matrix_ubo);
+	glBufferData(GL_UNIFORM_BUFFER, 2*sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+	glBindBufferBase(GL_UNIFORM_BUFFER, 0, matrix_ubo);
+
+	glGenBuffers(1, &light_ubo);
+	glBindBuffer(GL_UNIFORM_BUFFER, light_ubo);
+	glBufferData(GL_UNIFORM_BUFFER, 272, NULL, GL_STATIC_DRAW); // PointLight = 64*2, DirLight = 64, SpotLight = 80
+	glBindBufferBase(GL_UNIFORM_BUFFER, 1, light_ubo);
+
+	glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(PointLight), &p1);
+	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight), sizeof(PointLight), &p2);
+	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight)*2, sizeof(DirLight), &dir);
+	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight)*2 + sizeof(DirLight), sizeof(SpotLight), &spot);
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+}
+
+void update_ubos(unsigned int& matrix_ubo, unsigned int& light_ubo, glm::vec3& lightPos){
+	glm::mat4 projection = glm::perspective(glm::radians(g_context.camera->fov), g_context.win_width/g_context.win_height, 0.01f, 200.0f);
+	glm::mat4 view = g_context.camera->get_view_mat();
+	glBindBuffer(GL_UNIFORM_BUFFER, matrix_ubo);
+	glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
+	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+	glBindBuffer(GL_UNIFORM_BUFFER, light_ubo);	
+	glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::vec3), glm::value_ptr(lightPos));
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+}
+
+void render_depth_map(SceneResources& sr, glm::mat4& lightSpaceMatrix){
+	sr.depth_shader.use();
+	sr.depth_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
+		
+	glm::mat4 model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(6.0f, -2.5f, 6.0f));
+	model = glm::scale(model, glm::vec3(10.0f, 1.0f, 10.0f));
+	sr.depth_shader.set_mat4("model", model);	
+	sr.scene_floor.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	sr.depth_shader.set_mat4("model", model);
+	sr.monkey.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);	
+	model = glm::translate(model, glm::vec3(6.0f, 0.0f, 0.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.monkey.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);	
+	model = glm::translate(model, glm::vec3(12.0f, 0.0f, 0.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.monkey.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.pedestal.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(6.0f, -2.0f, 0.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.pedestal.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(12.0f, -2.0f, 0.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.pedestal.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(0.0f, -2.0f, 12.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.pedestal.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(6.0f, -2.0f, 12.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.pedestal.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(12.0f, -2.0f, 12.0f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.pedestal.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(12.0f, 0.1f, 12.0f));
+	model = glm::rotate(model, (float)glm::radians(glfwGetTime() * 5.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	model = glm::scale(model, glm::vec3(0.5));
+	sr.depth_shader.set_mat4("model", model);
+	sr.cube.Draw(sr.depth_shader);
+
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(0.0f, 0.0f, 12.0f));
+	model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+	sr.depth_shader.set_mat4("model", model);
+	sr.planet.Draw(sr.depth_shader);
+}
+
+void render_postprocess(SceneResources& sr,unsigned int& vao, unsigned int& texture){
+	sr.screen_shader.use();
+	sr.screen_shader.set_int("screen", 0);
+	sr.screen_shader.set_int("mode", g_context.post_processing_mode);
+	sr.screen_shader.set_float("gamma", 2.2f);
+	sr.screen_shader.set_bool("correct_gamma", g_context.use_gamma_correction);
+	
+	glBindVertexArray(vao);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glBindVertexArray(0);
+}
+
+void render_particles(SceneResources& sr, unsigned int& vao){
+	sr.particle_shader.use();
+	sr.particle_shader.set_float("time", glfwGetTime());
+	sr.particle_shader.set_float("cone_height", g_context.cone_height); 
+	sr.particle_shader.set_float("top_radius", g_context.top_radius);
+	glBindVertexArray(vao);
+	glDrawArraysInstanced(GL_POINTS, 0, 1, g_context.particle_count);
+	glBindVertexArray(0);
+}
+
+

@@ -95,6 +95,10 @@ void setup_shadow_map(unsigned int& depth_fbo, unsigned int& depth_map);
 void setup_rock_instancing(Model& rock, unsigned int& vbo);
 void setup_particle_system(unsigned int& vao, unsigned int& vbo);
 void setup_lights(PointLight& p1, PointLight& p2, DirLight& dir, SpotLight& spot);
+void setup_ubos(unsigned int& matrix_ubo, unsigned int& light_ubo, PointLight& p1, PointLight& p2, DirLight& dir, SpotLight& spot);
+void update_ubos(unsigned int& matrix_ubo, unsigned int& light_ubo, glm::vec3& lightPos);
+void render_depth_map(SceneResources& sr, glm::mat4& lightSpaceMatrix);
+void render_postprocess(SceneResources& sr, unsigned int& vao, unsigned int& texture);
+void render_particles(SceneResources& sr, unsigned int& vao);
 unsigned int loadCubeMap(std::vector<std::string> faces);
 SceneResources load_scene_resources();
-
