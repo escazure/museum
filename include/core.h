@@ -1,6 +1,6 @@
 #pragma once
 #include "gl3w.h"
-#include <GLFW/glfw3.h>
+#include "glfw3.h"
 #include "shader_program.h"
 #include "camera.h"
 #include "model.h"
