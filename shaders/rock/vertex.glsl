@@ -19,8 +19,8 @@ void main(){
 	TexCoords = aTexCoords;	
 	Normal = mat3(transpose(inverse(instanceMatrix))) * aNormal;
 
+	vec3 pivot = vec3(0.0, 0.0, 0.0);
 	vec4 worldPos = instanceMatrix * vec4(aPos, 1.0);
-	vec3 pivot = vec3(0.0, 0.0, 12.0);
 	float s = sin(time);
 	float c = cos(time);
 

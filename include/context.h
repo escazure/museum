@@ -10,12 +10,14 @@ class Context {
 	float delta_time;
 	float cone_height = 1.5f;
 	float top_radius = 0.7f;
+	float light_cube_size = 0.05f;
 
 	bool show_normals;
 	bool rotate_light;
 	bool use_blinn = true;
 	bool use_gamma_correction = true;
 	int post_processing_mode;
+	int showcase_mode;
 
 	unsigned int rock_amount = 10000;
 	unsigned int particle_count = 10000;
