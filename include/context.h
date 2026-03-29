@@ -28,6 +28,7 @@ class Context {
 	float scale = 1.0f;
 
 	bool show_normals;
+	bool show_depth_map;
 	bool rotate_light;
 	bool use_gamma_correction = true;
 	bool capture_mouse = true;

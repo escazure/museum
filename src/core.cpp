@@ -58,13 +58,6 @@ void run(){
 	unsigned int depth_map_fbo, depth_map;
 	setup_shadow_map(depth_map_fbo, depth_map);
 
-	float near_plane = -2.0f, far_plane = 10.0f;
-	glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
-	glm::mat4 lightView = glm::lookAt(glm::vec3(4.0f, 4.0f, 4.0f),
-									  glm::vec3(6.0f, 0.0f, 6.0f),
-									  glm::vec3(0.0f, 1.0f, 0.0f));
-	glm::mat4 lightSpaceMatrix = lightProjection * lightView;
-
 	unsigned int rock_vbo;
 	setup_rock_instancing(sr.rock, rock_vbo);	
 
@@ -81,27 +74,23 @@ void run(){
 	};
 	unsigned int skybox_texture = loadCubeMap(faces);
 
-	glm::vec3 lightPos = glm::vec3(6.0f, 2.0f, 3.0f);
-	glm::vec3 lightPos2 = glm::vec3(12.0f, 2.0f, 12.0f);
-	glm::vec3 lightColorWarm = glm::vec3(0.8f, 0.8f, 0.1f);
-	glm::vec3 lightColorNeutral = glm::vec3(1.0f, 1.0f, 1.0f);
-	glm::vec3 lightColorCold = glm::vec3(0.3f, 0.4f, 1.0f);
+	glm::vec3 lightPos;
+
+	LightData point_light_data;
+	point_light_data.position = glm::vec3(0.0f, 4.0f, 4.0f);
+	point_light_data.color = glm::vec3(0.8f, 0.8f, 0.1f);
+	LightData spot_light_data;
+	spot_light_data.position = glm::vec3(-5.0f, 4.0f, 0.0f);
+	spot_light_data.color = glm::vec3(0.3f, 0.4f, 1.0f);
+	LightData dir_light_data;
+	dir_light_data.position = glm::vec3(2.0f, 4.0f, 2.0f);
+	dir_light_data.color = glm::vec3(1.0f, 1.0f, 1.0f);
 
 	PointLight point_light;
 	PointLight point_light2;
 	DirLight dir_light;
 	SpotLight spot_light;
-	setup_lights(point_light, point_light2, dir_light, spot_light);
-
-	LightData point_light_data;
-	point_light_data.position = glm::vec3(0.0f, 2.0f, 3.0f);
-	point_light_data.color = glm::vec3(0.8f, 0.8f, 0.1f);
-	LightData spot_light_data;
-	spot_light_data.position = glm::vec3(-3.0f, 2.0f, 0.0f);
-	spot_light_data.color = glm::vec3(0.3f, 0.4f, 1.0f);
-	LightData dir_light_data;
-	dir_light_data.position = glm::vec3(-1.0f, 2.0f, -1.0f);
-	dir_light_data.color = glm::vec3(1.0f, 1.0f, 1.0f);
+	setup_lights(point_light, point_light2, dir_light, spot_light, point_light_data, spot_light_data, dir_light_data);
 
 	unsigned int matrix_ubo, light_ubo;
 	setup_ubos(matrix_ubo, light_ubo, point_light, point_light2, dir_light, spot_light);
@@ -131,6 +120,7 @@ void run(){
 			lightPos.x = glm::sin(rotation_offset) * g_context.point_light_rotation_radius;
 			lightPos.z = glm::cos(rotation_offset) * g_context.point_light_rotation_radius;
 		}
+		lightPos.y = point_light_data.position.y;
 		point_light_data.position = lightPos;
 
 		// Update ubos //
@@ -138,6 +128,31 @@ void run(){
 		// ------------------- //
 
 		// Render scene to depth texture //
+		float near_plane = 0.1f, far_plane = 20.0f;
+		glm::mat4 lightProjection, lightView, lightSpaceMatrix;
+		switch(g_context.demo_mode){
+			case 0:
+				lightProjection = glm::perspective(glm::radians(60.0f), (float)g_context.shadow_width/(float)g_context.shadow_height, near_plane, far_plane);
+				lightView = glm::lookAt(glm::vec3(point_light_data.position),
+									glm::vec3(0.0f, -2.5f, 0.0f), 
+									glm::vec3(0.0f, 1.0f, 0.0f));
+				break;
+			case 1:
+				lightProjection = glm::perspective(glm::radians(30.0f), (float)g_context.shadow_width/(float)g_context.shadow_height, near_plane, far_plane);
+				lightView = glm::lookAt(glm::vec3(spot_light_data.position),
+									glm::vec3(0.0f, -2.0f, 0.0f), 
+									glm::vec3(0.0f, 1.0f, 0.0f));
+				break;
+			default:
+				lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+				lightView = glm::lookAt(glm::vec3(dir_light_data.position),
+									glm::vec3(0.0f, -2.5f, 0.0f), 
+									glm::vec3(0.0f, 1.0f, 0.0f));
+				break;
+
+		}	
+		lightSpaceMatrix = lightProjection * lightView;
+
 		glViewport(0, 0, g_context.shadow_width, g_context.shadow_height);
 		glBindFramebuffer(GL_FRAMEBUFFER, depth_map_fbo);
 		glClear(GL_DEPTH_BUFFER_BIT);
@@ -157,7 +172,7 @@ void run(){
 		glActiveTexture(GL_TEXTURE0);
 
 		render_floor(sr, depth_map, lightSpaceMatrix);
-		render_pedestal(sr, depth_map);
+		render_pedestal(sr, depth_map, lightSpaceMatrix);
 	
 		switch(g_context.demo_mode){
 			case 0:
@@ -175,11 +190,11 @@ void run(){
 			case 4:
 				glEnable(GL_BLEND);
 				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-				render_particles(sr, particle_vao, particle_vbo);
+				render_particles(sr, particle_vao, particle_vbo, dir_light_data);
 				glDisable(GL_BLEND);
 				break;
 			case 5:
-				render_texturing(sr);
+				render_texturing(sr, dir_light_data);
 				break;
 		}
 		
@@ -194,7 +209,7 @@ void run(){
 		// Post processing //
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		render_postprocess(sr, quad_vao, quad_texture);
+		render_postprocess(sr, quad_vao, g_context.show_depth_map ? depth_map : quad_texture);
 		// --------------------- //
 		
 		// Render gui //
@@ -484,37 +499,32 @@ void respawn(Particle& p){
     p.scale = (rand() % 20) / 10000.0f + 0.005f;
 }
 
-void setup_lights(PointLight& p1, PointLight& p2, DirLight& dir, SpotLight& spot){
-	glm::vec3 lightPos = glm::vec3(0.0f, 2.0f, 3.0f);
+void setup_lights(PointLight& p1, PointLight& p2, DirLight& dir, SpotLight& spot, LightData& point_light_data, LightData& spot_light_data, LightData& dir_light_data){
 	glm::vec3 lightPos2 = glm::vec3(0.0f, 2.0f, 0.0f);
 	glm::vec3 lightColorBlue = glm::vec3(0.4f, 1.0f, 1.0f);
-	glm::vec3 lightColorWarm = glm::vec3(0.8f, 0.8f, 0.1f);
-	glm::vec3 lightColorNeutral = glm::vec3(1.0f, 1.0f, 1.0f);
-	glm::vec3 lightColorCold = glm::vec3(0.3f, 0.4f, 1.0f);
 
-	p1.position = glm::vec4(lightPos, 0.0f);
-	p1.ambient = glm::vec4(lightColorWarm * 0.1f, 1.0f);
-	p1.diffuse = glm::vec4(lightColorWarm * 0.7f, 0.05f);
-	p1.specular = glm::vec4(lightColorWarm * 0.7f, 0.012f);
+	p1.position = glm::vec4(point_light_data.position, 0.0f);
+	p1.ambient = glm::vec4(point_light_data.color * 0.1f, 1.0f);
+	p1.diffuse = glm::vec4(point_light_data.color * 0.7f, 0.05f);
+	p1.specular = glm::vec4(point_light_data.color * 0.7f, 0.012f);
 
 	p2.position = glm::vec4(lightPos2, 0.0f);
 	p2.ambient = glm::vec4(lightColorBlue * 0.1f, 1.0f);
-	p2.diffuse = glm::vec4(lightColorBlue * 0.5f, 0.09f);
+	p2.diffuse = glm::vec4(lightColorBlue * 0.6f, 0.09f);
 	p2.specular = glm::vec4(lightColorBlue * 0.7f, 0.032f);
 
-	lightPos = glm::vec3(4.0f, 4.0f, 4.0f);
-	glm::vec3 lightDir = glm::normalize(glm::vec3(6.0f, 0.0f, 6.0f) - lightPos);
-
+	glm::vec3 lightDir = glm::normalize(glm::vec3(0.0f, -2.0f, 0.0f) - dir_light_data.position);
 	dir.direction = glm::vec4(lightDir, 0.0f);
-	dir.ambient = glm::vec4(lightColorNeutral * 0.1f, 0.0f);
-	dir.diffuse = glm::vec4(lightColorNeutral * 0.4f, 0.0f);
-	dir.specular = glm::vec4(lightColorNeutral * 0.4f, 0.0f);
+	dir.ambient = glm::vec4(dir_light_data.color * 0.1f, 0.0f);
+	dir.diffuse = glm::vec4(dir_light_data.color * 0.6f, 0.0f);
+	dir.specular = glm::vec4(dir_light_data.color * 0.4f, 0.0f);
 
-	spot.position = glm::vec4(-3.0f, 2.0f, 0.0f, glm::cos(glm::radians(7.0f)));
-	spot.direction = glm::vec4(1.3f, -1.0f, 0.0f, glm::cos(glm::radians(10.0f)));
-	spot.ambient = glm::vec4(lightColorCold * 0.1f, 1.0f);
-	spot.diffuse = glm::vec4(lightColorCold * 0.5f, 0.08f);
-	spot.specular = glm::vec4(lightColorCold * 0.7f, 0.03f);
+	lightDir = glm::normalize(glm::vec3(0.0f, -2.5f, 0.0f) - spot_light_data.position);
+	spot.position = glm::vec4(spot_light_data.position, glm::cos(glm::radians(15.0f)));
+	spot.direction = glm::vec4(lightDir, glm::cos(glm::radians(20.0f)));
+	spot.ambient = glm::vec4(spot_light_data.color * 0.05f, 1.0f);
+	spot.diffuse = glm::vec4(spot_light_data.color * 0.4f, 0.08f);
+	spot.specular = glm::vec4(spot_light_data.color * 0.7f, 0.03f);
 }
 
 void setup_ubos(unsigned int& matrix_ubo, unsigned int& light_ubo, PointLight& p1, PointLight& p2, DirLight& dir, SpotLight& spot){
@@ -554,8 +564,8 @@ void render_depth_map(SceneResources& sr, glm::mat4& lightSpaceMatrix){
 	sr.depth_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
 		
 	glm::mat4 model = glm::mat4(1.0f);
-	model = glm::translate(model, glm::vec3(6.0f, -2.5f, 6.0f));
-	model = glm::scale(model, glm::vec3(10.0f, 1.0f, 10.0f));
+	model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
+	model = glm::scale(model, glm::vec3(3.0f, 1.0f, 3.0f));
 	sr.depth_shader.set_mat4("model", model);	
 	sr.scene_floor.Draw(sr.depth_shader);
 
@@ -566,6 +576,8 @@ void render_depth_map(SceneResources& sr, glm::mat4& lightSpaceMatrix){
 
 	if(g_context.demo_mode < 3){
 		model = glm::mat4(1.0f);
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.8f));
 		sr.depth_shader.set_mat4("model", model);
 		sr.monkey.Draw(sr.depth_shader);
 	}
@@ -591,6 +603,8 @@ void render_postprocess(SceneResources& sr,unsigned int& vao, unsigned int& text
 	sr.screen_shader.use();
 	sr.screen_shader.set_int("screen", 0);
 	sr.screen_shader.set_int("mode", g_context.post_processing_mode);
+	if(g_context.show_depth_map)
+		sr.screen_shader.set_int("mode", 4);
 	sr.screen_shader.set_float("gamma", g_context.gamma); 
 	sr.screen_shader.set_bool("correct_gamma", g_context.use_gamma_correction);
 	
@@ -601,7 +615,7 @@ void render_postprocess(SceneResources& sr,unsigned int& vao, unsigned int& text
 	glBindVertexArray(0);
 }
 
-void render_particles(SceneResources& sr, unsigned int& vao, unsigned int& vbo){
+void render_particles(SceneResources& sr, unsigned int& vao, unsigned int& vbo, LightData& light_data){
 	static std::vector<glm::mat4> matrices(g_context.particle_count);
 
     glm::mat4 model = glm::mat4(1.0f);
@@ -624,6 +638,14 @@ void render_particles(SceneResources& sr, unsigned int& vao, unsigned int& vbo){
 	glBindVertexArray(vao);
 	glDrawArraysInstanced(GL_POINTS, 0, 1, g_context.particle_count);
 	glBindVertexArray(0);
+	
+	sr.light_cube_shader.use();
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, light_data.position);
+	model = glm::scale(model, glm::vec3(g_context.light_cube_size));
+	sr.light_cube_shader.set_mat4("model", model);
+	sr.light_cube_shader.set_vec3("lightColor", light_data.color);
+	sr.light_cube.Draw(sr.light_cube_shader);
 }
 
 void render_point_light(SceneResources& sr, LightData& light_data){
@@ -643,6 +665,8 @@ void render_point_light(SceneResources& sr, LightData& light_data){
 	model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
 	model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	sr.phong_shader.set_mat4("model", model);
+	sr.phong_shader.set_int("depth_map", 1);
+	sr.phong_shader.set_bool("calculateShadows", false);
 	sr.phong_shader.set_float("dirLightIntensity", 0.1);
 	sr.phong_shader.set_float("pointLightIntensity", 1.0);
 	sr.phong_shader.set_float("spotLightIntensity", 0.0);
@@ -666,14 +690,17 @@ void render_spot_light(SceneResources& sr, LightData& light_data){
 
 	sr.phong_shader.set_vec3("viewPos", g_context.camera->position);
 	sr.phong_shader.set_bool("hasSpecular", true);
+	sr.phong_shader.set_bool("calculateShadows", false);
 	sr.phong_shader.set_bool("showNormals", g_context.show_normals);
 	sr.phong_shader.set_bool("useBlinn", g_context.use_blinn);
+	sr.phong_shader.set_int("depth_map", 1);
 
 	glm::mat4 model = glm::mat4(1.0f);	
 	model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 	model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
 	model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	sr.phong_shader.set_mat4("model", model);
+	sr.phong_shader.set_int("depth_map", 1);
 	sr.phong_shader.set_float("dirLightIntensity", 0.1);
 	sr.phong_shader.set_float("pointLightIntensity", 0.0);
 	sr.phong_shader.set_float("spotLightIntensity", 1.0);
@@ -698,7 +725,9 @@ void render_dir_light(SceneResources& sr, LightData& light_data){
 	sr.phong_shader.set_vec3("viewPos", g_context.camera->position);
 	sr.phong_shader.set_bool("hasSpecular", true);
 	sr.phong_shader.set_bool("showNormals", g_context.show_normals);
+	sr.phong_shader.set_bool("calculateShadows", false);
 	sr.phong_shader.set_bool("useBlinn", g_context.use_blinn);
+	sr.phong_shader.set_int("depth_map", 1);
 
 	glm::mat4 model = glm::mat4(1.0f);	
 	model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -748,9 +777,17 @@ void render_instancing(SceneResources& sr, LightData& light_data){
 		glDrawElementsInstanced(GL_TRIANGLES, sr.rock.meshes[i].indices.size(), GL_UNSIGNED_INT, 0, g_context.rock_count);
 		glBindVertexArray(0);
 	}
+
+	sr.light_cube_shader.use();
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, light_data.position);
+	model = glm::scale(model, glm::vec3(g_context.light_cube_size));
+	sr.light_cube_shader.set_mat4("model", model);
+	sr.light_cube_shader.set_vec3("lightColor", light_data.color);
+	sr.light_cube.Draw(sr.light_cube_shader);
 }
 
-void render_texturing(SceneResources& sr){
+void render_texturing(SceneResources& sr, LightData& light_data){
 	sr.procedural_shader.use();
 	glm::mat4 model = glm::mat4(1.0f);
 	model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
@@ -762,9 +799,17 @@ void render_texturing(SceneResources& sr){
 	sr.procedural_shader.set_float("scale", g_context.scale);
 	sr.procedural_shader.set_int("fbm_octaves", g_context.octaves);
 	sr.cube.Draw(sr.procedural_shader);
+
+	sr.light_cube_shader.use();
+	model = glm::mat4(1.0f);
+	model = glm::translate(model, light_data.position);
+	model = glm::scale(model, glm::vec3(g_context.light_cube_size));
+	sr.light_cube_shader.set_mat4("model", model);
+	sr.light_cube_shader.set_vec3("lightColor", light_data.color);
+	sr.light_cube.Draw(sr.light_cube_shader);
 }
 
-void render_pedestal(SceneResources& sr, unsigned int& depth_map){
+void render_pedestal(SceneResources& sr, unsigned int& depth_map, glm::mat4& lightSpaceMatrix){
 	sr.phong_shader.use();
 	if(g_context.use_blinn)
 		sr.phong_shader.set_float("material.shininess", 32.0f);
@@ -775,9 +820,27 @@ void render_pedestal(SceneResources& sr, unsigned int& depth_map){
 	sr.phong_shader.set_mat4("model", model);
 	sr.phong_shader.set_bool("hasSpecular", false);
 	sr.phong_shader.set_vec3("specular_value", glm::vec3(0.02f, 0.02f, 0.02f));
-	sr.phong_shader.set_float("dirLightIntensity", 1.0f);
-	sr.phong_shader.set_float("pointLightIntensity", 1.0f);
-	sr.phong_shader.set_float("spotLightIntensity", 1.0f);
+	sr.phong_shader.set_int("depth_map", 1);
+	sr.phong_shader.set_bool("calculateShadows", true);
+	sr.phong_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
+	if(g_context.demo_mode == 0){
+		sr.phong_shader.set_float("dirLightIntensity", 0.0f);
+		sr.phong_shader.set_float("pointLightIntensity", 1.0f);
+		sr.phong_shader.set_float("spotLightIntensity", 0.0f);
+		sr.phong_shader.set_bool("useSmallerBias", false);
+	}
+	else if(g_context.demo_mode == 1){
+		sr.phong_shader.set_float("dirLightIntensity", 0.0f);
+		sr.phong_shader.set_float("pointLightIntensity", 0.0f);
+		sr.phong_shader.set_float("spotLightIntensity", 1.0f);
+		sr.phong_shader.set_bool("useSmallerBias", false);
+	}
+	else{
+		sr.phong_shader.set_float("dirLightIntensity", 1.0f);
+		sr.phong_shader.set_float("pointLightIntensity", 0.0f);
+		sr.phong_shader.set_float("spotLightIntensity", 0.0f);
+		sr.phong_shader.set_bool("useSmallerBias", true);
+	}
 	sr.pedestal.Draw(sr.phong_shader);
 }
 
@@ -790,11 +853,26 @@ void render_floor(SceneResources& sr, unsigned int& depth_map, glm::mat4& lightS
 	sr.phong_shader.set_bool("hasSpecular", false);
 	sr.phong_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
 	sr.phong_shader.set_int("depth_map", 1);
+	sr.phong_shader.set_bool("calculateShadows", true);
 	sr.phong_shader.set_vec3("specular_value", glm::vec3(0.1));
-	sr.phong_shader.set_float("material.shininess", 64.0);
-	sr.phong_shader.set_float("dirLightIntensity", 1.0);
-	sr.phong_shader.set_float("pointLightIntensity", 1.0);
-	sr.phong_shader.set_float("spotLightIntensity", 1.0);
+	if(g_context.demo_mode == 0){
+		sr.phong_shader.set_float("dirLightIntensity", 0.0f);
+		sr.phong_shader.set_float("pointLightIntensity", 1.0f);
+		sr.phong_shader.set_float("spotLightIntensity", 0.0f);
+		sr.phong_shader.set_bool("useSmallerBias", false);
+	}
+	else if(g_context.demo_mode == 1){
+		sr.phong_shader.set_float("dirLightIntensity", 0.0f);
+		sr.phong_shader.set_float("pointLightIntensity", 0.0f);
+		sr.phong_shader.set_float("spotLightIntensity", 1.0f);
+		sr.phong_shader.set_bool("useSmallerBias", false);
+	}
+	else{
+		sr.phong_shader.set_float("dirLightIntensity", 1.0f);
+		sr.phong_shader.set_float("pointLightIntensity", 0.0f);
+		sr.phong_shader.set_float("spotLightIntensity", 0.0f);
+		sr.phong_shader.set_bool("useSmallerBias", true);
+	}
 	if(g_context.use_blinn)
 		sr.phong_shader.set_float("material.shininess", 64.0f);
 	else
@@ -880,12 +958,10 @@ void render_gui(){
 	ImGui::Text("Post processing");
 	ImGui::Separator();
 
-	ImGui::RadioButton("Normal", &g_context.post_processing_mode, 0);
 	ImGui::RadioButton("Inverse", &g_context.post_processing_mode, 1);
 	ImGui::RadioButton("Grayscale", &g_context.post_processing_mode, 2);
 	ImGui::RadioButton("Gaussian Blur", &g_context.post_processing_mode, 3);
 
-	ImGui::Checkbox("Normal Visualization", &g_context.show_normals);
 	ImGui::Checkbox("Gamma Correction", &g_context.use_gamma_correction);
 	ImGui::SliderFloat("Gamma", &g_context.gamma, 0.0f, 3.0f, "%.1f");
 	ImGui::Separator();
@@ -894,6 +970,13 @@ void render_gui(){
 	ImGui::Text("Performance");
 	ImGui::Separator();
 	ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
+	ImGui::Separator();
+
+	ImGui::NewLine();
+	ImGui::Text("Debugging");
+	ImGui::Separator();
+	ImGui::Checkbox("Show normals", &g_context.show_normals);
+	ImGui::Checkbox("Show depth map", &g_context.show_depth_map);
 	ImGui::Separator();
 
 	ImGui::End();

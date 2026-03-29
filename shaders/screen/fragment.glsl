@@ -8,8 +8,15 @@ uniform bool correct_gamma;
 uniform float gamma;
 
 const float offset = 1.0/300.0;
+const float near_plane = 0.1;
+const float far_plane = 10.0;
 
 out vec4 FragColor;
+
+float LinearizeDepth(float depth){
+    float z = depth * 2.0 - 1.0; 
+    return (2.0 * near_plane * far_plane) / (far_plane + near_plane - z * (far_plane - near_plane));
+}
 
 void main(){
 	vec2 offsets[9] = vec2[](
@@ -28,7 +35,10 @@ void main(){
 
 	float kernel[9]; 
 	vec3 color = vec3(0.0, 0.0, 0.0);
-	if(mode == 3){
+	if(mode == 4){
+		color = vec3(LinearizeDepth(texture(screen, TexCoords).r)/far_plane);
+	}
+	else if(mode == 3){
 		kernel = float[](
 			1.0, 2.0, 1.0,	
 			2.0, 4.0, 2.0,	

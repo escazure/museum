@@ -49,6 +49,8 @@ uniform vec3 viewPos;
 uniform bool showNormals;
 uniform bool hasSpecular;
 uniform bool useBlinn;
+uniform bool calculateShadows;
+uniform bool useSmallerBias;
 
 uniform float dirLightIntensity;
 uniform float pointLightIntensity;
@@ -104,8 +106,13 @@ vec3 calcDirLight(DirLight light, vec3 normal, vec3 viewDir){
 	vec3 diffuse = light.diffuse.xyz * diff * diffuse_color;
 	vec3 specular = light.specular.xyz * spec * specular_color;
 			
-	float shadow = calcShadows(fragLightPos, normal, lightDir);
-	return ambient + (1.0 - shadow)*(diffuse + specular);
+	if(calculateShadows){
+		float shadow = calcShadows(fragLightPos, normal, lightDir);
+		return ambient + (1.0 - shadow)*(diffuse + specular);
+	}
+	else{
+		return ambient + diffuse + specular;	
+	}
 }
 
 vec3 calcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir){
@@ -141,8 +148,14 @@ vec3 calcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir){
 	ambient *= attenuation;	
 	diffuse *= attenuation;
 	specular *= attenuation;	
-
-	return ambient + diffuse + specular;
+	
+	if(calculateShadows){
+		float shadow = calcShadows(fragLightPos, normal, lightDir);
+		return ambient + (1.0 - shadow)*(diffuse + specular);
+	}
+	else{
+		return ambient + diffuse + specular;	
+	}
 }
 
 vec3 calcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir){
@@ -186,14 +199,24 @@ vec3 calcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir){
 	diffuse *= intensity;
 	specular *= intensity;
 	
-	return ambient + diffuse + specular;
+	if(calculateShadows){
+		float shadow = calcShadows(fragLightPos, normal, lightDir);
+		return ambient + (1.0 - shadow)*(diffuse + specular);
+	}
+	else{
+		return ambient + diffuse + specular;	
+	}
 }
 
 float calcShadows(vec4 fragLightSpacePos, vec3 normal, vec3 lightDir){
 	vec3 projCoords = fragLightSpacePos.xyz/fragLightSpacePos.w;
 	projCoords = projCoords * 0.5 + 0.5;
 	float currentDepth = projCoords.z;
-	float bias = max(0.05 * (1.0 - dot(normal, lightDir)), 0.005);
+	float bias;
+	bias = max(0.005 * (1.0 - dot(normal, lightDir)), 0.0005);
+	if(useSmallerBias){
+		bias = max(0.05 * (1.0 - dot(normal, lightDir)), 0.005);
+	}
 
 	float shadow = 0.0;
 	vec2 texel_size = 1.0 / textureSize(depth_map, 0);
@@ -208,5 +231,5 @@ float calcShadows(vec4 fragLightSpacePos, vec3 normal, vec3 lightDir){
 	shadow /= 9.0;
 	if(projCoords.z > 1.0) shadow = 0.0;
 
-	return shadow; 
+    return shadow;
 }
