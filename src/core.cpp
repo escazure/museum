@@ -22,6 +22,7 @@ void init(){
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetCursorPosCallback(window, mouse_callback);
 	glfwSetScrollCallback(window, scroll_callback);
+	glfwSetFramebufferSizeCallback(window, framebuffer_resize_callback);
 
 	if(gl3wInit()){
 		std::cout << "Failed initing gl3w\n";
@@ -115,6 +116,10 @@ void run(){
 		g_context.delta_time = current_frame - last_frame;
 		process_input();
 		update_particles();
+		if(g_context.resize_requested){
+			resize_framebuffer(quad_fbo, quad_texture);
+			g_context.resize_requested = false;
+		}
 
 		static float rotation_offset = 0.0f;
 		if(g_context.rotate_light){
@@ -231,6 +236,12 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
 	if(g_context.capture_mouse)
 		g_context.camera->process_scroll(yoffset);
+}
+
+void framebuffer_resize_callback(GLFWwindow* window, int width, int height){
+	g_context.win_width = width;
+	g_context.win_height = height;
+	g_context.resize_requested = true;	
 }
 
 void process_input(){
@@ -352,6 +363,18 @@ void setup_shadow_map(unsigned int& depth_fbo, unsigned int& depth_map){
 SceneResources load_scene_resources(){
 	SceneResources sr;
 	return sr;
+}
+
+void resize_framebuffer(unsigned int& fbo, unsigned int& texture){
+	glViewport(0, 0, (int)g_context.win_width, (int)g_context.win_height);
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo);	
+
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, g_context.win_width, g_context.win_height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
 }
 
 void setup_rock_instancing(Model& rock, unsigned int& vbo){

@@ -31,6 +31,7 @@ class Context {
 	bool rotate_light;
 	bool use_gamma_correction = true;
 	bool capture_mouse = true;
+	bool resize_requested = false;
 
 	int post_processing_mode;
 	int demo_mode;
