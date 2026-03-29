@@ -1,0 +1,4 @@
+/home/escazure/cpp_projects/museum/build/CMakeFiles/copy_assets.dir
+/home/escazure/cpp_projects/museum/build/CMakeFiles/museum.dir
+/home/escazure/cpp_projects/museum/build/CMakeFiles/edit_cache.dir
+/home/escazure/cpp_projects/museum/build/CMakeFiles/rebuild_cache.dir
