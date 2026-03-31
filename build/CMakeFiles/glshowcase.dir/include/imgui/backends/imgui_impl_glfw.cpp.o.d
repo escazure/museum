@@ -1,8 +1,8 @@
-CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o: \
- /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_glfw.cpp \
+CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_glfw.cpp.o: \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/backends/imgui_impl_glfw.cpp \
  /usr/include/stdc-predef.h \
- /home/escazure/cpp_projects/museum/include/imgui/imgui.h \
- /home/escazure/cpp_projects/museum/include/imgui/imconfig.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/imgui.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/float.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stdarg.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stddef.h \
@@ -13,7 +13,7 @@ CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o: \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/strings.h /usr/include/assert.h \
- /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_glfw.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/backends/imgui_impl_glfw.h \
  /usr/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/types.h \

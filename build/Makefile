@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/escazure/cpp_projects/museum
+CMAKE_SOURCE_DIR = /home/escazure/cpp_projects/glshowcase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/escazure/cpp_projects/museum/build
+CMAKE_BINARY_DIR = /home/escazure/cpp_projects/glshowcase/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles /home/escazure/cpp_projects/museum/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/glshowcase/build/CMakeFiles /home/escazure/cpp_projects/glshowcase/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/glshowcase/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,24 +130,24 @@ copy_assets/fast:
 .PHONY : copy_assets/fast
 
 #=============================================================================
-# Target rules for targets named museum
+# Target rules for targets named glshowcase
 
 # Build rule for target.
-museum: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 museum
-.PHONY : museum
+glshowcase: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glshowcase
+.PHONY : glshowcase
 
 # fast build rule for target.
-museum/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/build
-.PHONY : museum/fast
+glshowcase/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/build
+.PHONY : glshowcase/fast
 
 include/gl3w/gl3w.o: include/gl3w/gl3w.c.o
 .PHONY : include/gl3w/gl3w.o
 
 # target to build an object file
 include/gl3w/gl3w.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/gl3w/gl3w.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/gl3w/gl3w.c.o
 .PHONY : include/gl3w/gl3w.c.o
 
 include/gl3w/gl3w.i: include/gl3w/gl3w.c.i
@@ -155,7 +155,7 @@ include/gl3w/gl3w.i: include/gl3w/gl3w.c.i
 
 # target to preprocess a source file
 include/gl3w/gl3w.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/gl3w/gl3w.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/gl3w/gl3w.c.i
 .PHONY : include/gl3w/gl3w.c.i
 
 include/gl3w/gl3w.s: include/gl3w/gl3w.c.s
@@ -163,7 +163,7 @@ include/gl3w/gl3w.s: include/gl3w/gl3w.c.s
 
 # target to generate assembly for a file
 include/gl3w/gl3w.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/gl3w/gl3w.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/gl3w/gl3w.c.s
 .PHONY : include/gl3w/gl3w.c.s
 
 include/imgui/backends/imgui_impl_glfw.o: include/imgui/backends/imgui_impl_glfw.cpp.o
@@ -171,7 +171,7 @@ include/imgui/backends/imgui_impl_glfw.o: include/imgui/backends/imgui_impl_glfw
 
 # target to build an object file
 include/imgui/backends/imgui_impl_glfw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : include/imgui/backends/imgui_impl_glfw.cpp.o
 
 include/imgui/backends/imgui_impl_glfw.i: include/imgui/backends/imgui_impl_glfw.cpp.i
@@ -179,7 +179,7 @@ include/imgui/backends/imgui_impl_glfw.i: include/imgui/backends/imgui_impl_glfw
 
 # target to preprocess a source file
 include/imgui/backends/imgui_impl_glfw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_glfw.cpp.i
 .PHONY : include/imgui/backends/imgui_impl_glfw.cpp.i
 
 include/imgui/backends/imgui_impl_glfw.s: include/imgui/backends/imgui_impl_glfw.cpp.s
@@ -187,7 +187,7 @@ include/imgui/backends/imgui_impl_glfw.s: include/imgui/backends/imgui_impl_glfw
 
 # target to generate assembly for a file
 include/imgui/backends/imgui_impl_glfw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_glfw.cpp.s
 .PHONY : include/imgui/backends/imgui_impl_glfw.cpp.s
 
 include/imgui/backends/imgui_impl_opengl3.o: include/imgui/backends/imgui_impl_opengl3.cpp.o
@@ -195,7 +195,7 @@ include/imgui/backends/imgui_impl_opengl3.o: include/imgui/backends/imgui_impl_o
 
 # target to build an object file
 include/imgui/backends/imgui_impl_opengl3.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o
 .PHONY : include/imgui/backends/imgui_impl_opengl3.cpp.o
 
 include/imgui/backends/imgui_impl_opengl3.i: include/imgui/backends/imgui_impl_opengl3.cpp.i
@@ -203,7 +203,7 @@ include/imgui/backends/imgui_impl_opengl3.i: include/imgui/backends/imgui_impl_o
 
 # target to preprocess a source file
 include/imgui/backends/imgui_impl_opengl3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_opengl3.cpp.i
 .PHONY : include/imgui/backends/imgui_impl_opengl3.cpp.i
 
 include/imgui/backends/imgui_impl_opengl3.s: include/imgui/backends/imgui_impl_opengl3.cpp.s
@@ -211,7 +211,7 @@ include/imgui/backends/imgui_impl_opengl3.s: include/imgui/backends/imgui_impl_o
 
 # target to generate assembly for a file
 include/imgui/backends/imgui_impl_opengl3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_opengl3.cpp.s
 .PHONY : include/imgui/backends/imgui_impl_opengl3.cpp.s
 
 include/imgui/imgui.o: include/imgui/imgui.cpp.o
@@ -219,7 +219,7 @@ include/imgui/imgui.o: include/imgui/imgui.cpp.o
 
 # target to build an object file
 include/imgui/imgui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui.cpp.o
 .PHONY : include/imgui/imgui.cpp.o
 
 include/imgui/imgui.i: include/imgui/imgui.cpp.i
@@ -227,7 +227,7 @@ include/imgui/imgui.i: include/imgui/imgui.cpp.i
 
 # target to preprocess a source file
 include/imgui/imgui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui.cpp.i
 .PHONY : include/imgui/imgui.cpp.i
 
 include/imgui/imgui.s: include/imgui/imgui.cpp.s
@@ -235,7 +235,7 @@ include/imgui/imgui.s: include/imgui/imgui.cpp.s
 
 # target to generate assembly for a file
 include/imgui/imgui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui.cpp.s
 .PHONY : include/imgui/imgui.cpp.s
 
 include/imgui/imgui_draw.o: include/imgui/imgui_draw.cpp.o
@@ -243,7 +243,7 @@ include/imgui/imgui_draw.o: include/imgui/imgui_draw.cpp.o
 
 # target to build an object file
 include/imgui/imgui_draw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_draw.cpp.o
 .PHONY : include/imgui/imgui_draw.cpp.o
 
 include/imgui/imgui_draw.i: include/imgui/imgui_draw.cpp.i
@@ -251,7 +251,7 @@ include/imgui/imgui_draw.i: include/imgui/imgui_draw.cpp.i
 
 # target to preprocess a source file
 include/imgui/imgui_draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_draw.cpp.i
 .PHONY : include/imgui/imgui_draw.cpp.i
 
 include/imgui/imgui_draw.s: include/imgui/imgui_draw.cpp.s
@@ -259,7 +259,7 @@ include/imgui/imgui_draw.s: include/imgui/imgui_draw.cpp.s
 
 # target to generate assembly for a file
 include/imgui/imgui_draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_draw.cpp.s
 .PHONY : include/imgui/imgui_draw.cpp.s
 
 include/imgui/imgui_tables.o: include/imgui/imgui_tables.cpp.o
@@ -267,7 +267,7 @@ include/imgui/imgui_tables.o: include/imgui/imgui_tables.cpp.o
 
 # target to build an object file
 include/imgui/imgui_tables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_tables.cpp.o
 .PHONY : include/imgui/imgui_tables.cpp.o
 
 include/imgui/imgui_tables.i: include/imgui/imgui_tables.cpp.i
@@ -275,7 +275,7 @@ include/imgui/imgui_tables.i: include/imgui/imgui_tables.cpp.i
 
 # target to preprocess a source file
 include/imgui/imgui_tables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_tables.cpp.i
 .PHONY : include/imgui/imgui_tables.cpp.i
 
 include/imgui/imgui_tables.s: include/imgui/imgui_tables.cpp.s
@@ -283,7 +283,7 @@ include/imgui/imgui_tables.s: include/imgui/imgui_tables.cpp.s
 
 # target to generate assembly for a file
 include/imgui/imgui_tables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_tables.cpp.s
 .PHONY : include/imgui/imgui_tables.cpp.s
 
 include/imgui/imgui_widgets.o: include/imgui/imgui_widgets.cpp.o
@@ -291,7 +291,7 @@ include/imgui/imgui_widgets.o: include/imgui/imgui_widgets.cpp.o
 
 # target to build an object file
 include/imgui/imgui_widgets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_widgets.cpp.o
 .PHONY : include/imgui/imgui_widgets.cpp.o
 
 include/imgui/imgui_widgets.i: include/imgui/imgui_widgets.cpp.i
@@ -299,7 +299,7 @@ include/imgui/imgui_widgets.i: include/imgui/imgui_widgets.cpp.i
 
 # target to preprocess a source file
 include/imgui/imgui_widgets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_widgets.cpp.i
 .PHONY : include/imgui/imgui_widgets.cpp.i
 
 include/imgui/imgui_widgets.s: include/imgui/imgui_widgets.cpp.s
@@ -307,7 +307,7 @@ include/imgui/imgui_widgets.s: include/imgui/imgui_widgets.cpp.s
 
 # target to generate assembly for a file
 include/imgui/imgui_widgets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/imgui/imgui_widgets.cpp.s
 .PHONY : include/imgui/imgui_widgets.cpp.s
 
 include/stb_image/stb_image.o: include/stb_image/stb_image.cpp.o
@@ -315,7 +315,7 @@ include/stb_image/stb_image.o: include/stb_image/stb_image.cpp.o
 
 # target to build an object file
 include/stb_image/stb_image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/stb_image/stb_image.cpp.o
 .PHONY : include/stb_image/stb_image.cpp.o
 
 include/stb_image/stb_image.i: include/stb_image/stb_image.cpp.i
@@ -323,7 +323,7 @@ include/stb_image/stb_image.i: include/stb_image/stb_image.cpp.i
 
 # target to preprocess a source file
 include/stb_image/stb_image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/stb_image/stb_image.cpp.i
 .PHONY : include/stb_image/stb_image.cpp.i
 
 include/stb_image/stb_image.s: include/stb_image/stb_image.cpp.s
@@ -331,7 +331,7 @@ include/stb_image/stb_image.s: include/stb_image/stb_image.cpp.s
 
 # target to generate assembly for a file
 include/stb_image/stb_image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/include/stb_image/stb_image.cpp.s
 .PHONY : include/stb_image/stb_image.cpp.s
 
 src/context.o: src/context.cpp.o
@@ -339,7 +339,7 @@ src/context.o: src/context.cpp.o
 
 # target to build an object file
 src/context.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/context.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/context.cpp.o
 .PHONY : src/context.cpp.o
 
 src/context.i: src/context.cpp.i
@@ -347,7 +347,7 @@ src/context.i: src/context.cpp.i
 
 # target to preprocess a source file
 src/context.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/context.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/context.cpp.i
 .PHONY : src/context.cpp.i
 
 src/context.s: src/context.cpp.s
@@ -355,7 +355,7 @@ src/context.s: src/context.cpp.s
 
 # target to generate assembly for a file
 src/context.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/context.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/context.cpp.s
 .PHONY : src/context.cpp.s
 
 src/core.o: src/core.cpp.o
@@ -363,7 +363,7 @@ src/core.o: src/core.cpp.o
 
 # target to build an object file
 src/core.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/core.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/core.cpp.o
 .PHONY : src/core.cpp.o
 
 src/core.i: src/core.cpp.i
@@ -371,7 +371,7 @@ src/core.i: src/core.cpp.i
 
 # target to preprocess a source file
 src/core.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/core.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/core.cpp.i
 .PHONY : src/core.cpp.i
 
 src/core.s: src/core.cpp.s
@@ -379,7 +379,7 @@ src/core.s: src/core.cpp.s
 
 # target to generate assembly for a file
 src/core.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/core.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/core.cpp.s
 .PHONY : src/core.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -387,7 +387,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -395,7 +395,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -403,7 +403,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/render.o: src/render.cpp.o
@@ -411,7 +411,7 @@ src/render.o: src/render.cpp.o
 
 # target to build an object file
 src/render.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/render.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/render.cpp.o
 .PHONY : src/render.cpp.o
 
 src/render.i: src/render.cpp.i
@@ -419,7 +419,7 @@ src/render.i: src/render.cpp.i
 
 # target to preprocess a source file
 src/render.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/render.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/render.cpp.i
 .PHONY : src/render.cpp.i
 
 src/render.s: src/render.cpp.s
@@ -427,7 +427,7 @@ src/render.s: src/render.cpp.s
 
 # target to generate assembly for a file
 src/render.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/render.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/render.cpp.s
 .PHONY : src/render.cpp.s
 
 src/setup.o: src/setup.cpp.o
@@ -435,7 +435,7 @@ src/setup.o: src/setup.cpp.o
 
 # target to build an object file
 src/setup.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/setup.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/setup.cpp.o
 .PHONY : src/setup.cpp.o
 
 src/setup.i: src/setup.cpp.i
@@ -443,7 +443,7 @@ src/setup.i: src/setup.cpp.i
 
 # target to preprocess a source file
 src/setup.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/setup.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/setup.cpp.i
 .PHONY : src/setup.cpp.i
 
 src/setup.s: src/setup.cpp.s
@@ -451,7 +451,7 @@ src/setup.s: src/setup.cpp.s
 
 # target to generate assembly for a file
 src/setup.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/setup.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/src/setup.cpp.s
 .PHONY : src/setup.cpp.s
 
 # Help Target
@@ -463,7 +463,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... copy_assets"
-	@echo "... museum"
+	@echo "... glshowcase"
 	@echo "... include/gl3w/gl3w.o"
 	@echo "... include/gl3w/gl3w.i"
 	@echo "... include/gl3w/gl3w.s"

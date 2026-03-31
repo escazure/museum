@@ -9,7 +9,7 @@ void init(){
 
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* mode = glfwGetVideoMode(monitor);
-	GLFWwindow* window = glfwCreateWindow(mode->width, mode->height, "forest", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(mode->width, mode->height, "glshowcase", NULL, NULL);
 	glfwMakeContextCurrent(window);
 	
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);

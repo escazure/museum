@@ -1,8 +1,8 @@
-CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o: \
- /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_opengl3.cpp \
+CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o: \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/backends/imgui_impl_opengl3.cpp \
  /usr/include/stdc-predef.h \
- /home/escazure/cpp_projects/museum/include/imgui/imgui.h \
- /home/escazure/cpp_projects/museum/include/imgui/imconfig.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/imgui.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/float.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stdarg.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stddef.h \
@@ -13,7 +13,7 @@ CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o: \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/strings.h /usr/include/assert.h \
- /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_opengl3.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/backends/imgui_impl_opengl3.h \
  /usr/include/stdio.h /usr/include/bits/types.h \
  /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
@@ -26,7 +26,7 @@ CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o: \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
- /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_opengl3_loader.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/backends/imgui_impl_opengl3_loader.h \
  /usr/include/c++/14.2/stdlib.h /usr/include/c++/14.2/cstdlib \
  /usr/include/c++/14.2/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.2/x86_64-unknown-linux-gnu/bits/os_defines.h \

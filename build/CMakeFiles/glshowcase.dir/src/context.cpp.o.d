@@ -1,9 +1,9 @@
-CMakeFiles/museum.dir/src/render.cpp.o: \
- /home/escazure/cpp_projects/museum/src/render.cpp \
+CMakeFiles/glshowcase.dir/src/context.cpp.o: \
+ /home/escazure/cpp_projects/glshowcase/src/context.cpp \
  /usr/include/stdc-predef.h \
- /home/escazure/cpp_projects/museum/include/render.h \
- /home/escazure/cpp_projects/museum/include/core.h \
- /home/escazure/cpp_projects/museum/include/gl3w/gl3w.h \
+ /home/escazure/cpp_projects/glshowcase/include/context.h \
+ /home/escazure/cpp_projects/glshowcase/include/core.h \
+ /home/escazure/cpp_projects/glshowcase/include/gl3w/gl3w.h \
  /usr/include/GL/glcorearb.h /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
@@ -15,11 +15,11 @@ CMakeFiles/museum.dir/src/render.cpp.o: \
  /usr/include/bits/time64.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
- /home/escazure/cpp_projects/museum/include/glfw3.h \
+ /home/escazure/cpp_projects/glshowcase/include/glfw3.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stddef.h \
- /home/escazure/cpp_projects/museum/include/shader_program.h \
- /home/escazure/cpp_projects/museum/include/glm/glm.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/_fixes.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/shader_program.h \
+ /home/escazure/cpp_projects/glshowcase/include/glm/glm.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/_fixes.hpp \
  /usr/include/c++/14.2/cmath /usr/include/c++/14.2/bits/requires_hosted.h \
  /usr/include/c++/14.2/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.2/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -88,79 +88,79 @@ CMakeFiles/museum.dir/src/render.cpp.o: \
  /usr/include/bits/uio_lim.h /usr/include/c++/14.2/cfloat \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/float.h \
  /usr/include/c++/14.2/cassert /usr/include/assert.h \
- /home/escazure/cpp_projects/museum/include/glm/fwd.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_int.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/setup.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/fwd.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_int.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/setup.hpp \
  /usr/include/c++/14.2/cstddef \
- /home/escazure/cpp_projects/museum/include/glm/detail/../simd/platform.h \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../simd/platform.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/emmintrin.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/mmintrin.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/mm_malloc.h \
  /usr/include/c++/14.2/stdlib.h /usr/include/c++/14.2/cstdlib \
  /usr/include/c++/14.2/cstdint \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_float.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/precision.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_mat.hpp \
- /home/escazure/cpp_projects/museum/include/glm/vec2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec2.inl \
- /home/escazure/cpp_projects/museum/include/glm/vec3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec3.inl \
- /home/escazure/cpp_projects/museum/include/glm/vec4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec4.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_vec4_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/mat2x2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_mat2x2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_mat2x2.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_matrix.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat2x3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat2x3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat2x3.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat2x4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat2x4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat2x4.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat3x2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat3x2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat3x2.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat3x3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat3x3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat3x3.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat3x4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat3x4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat3x4.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat4x2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat4x2.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat4x2.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat4x3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat4x3.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat4x3.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../mat4x4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat4x4.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat4x4.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_mat4x4_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_matrix.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../geometric.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_geometric.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_geometric.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_exponential.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_vec1.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/type_vec1.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_exponential.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_vector_relational.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_vector_relational.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_vector_relational_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/_vectorize.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_exponential_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/../simd/exponential.h \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_common.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/_fixes.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_common.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_common_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/../simd/common.h \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_float.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/precision.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_mat.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/vec2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec2.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/vec3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec3.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/vec4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec4.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_vec4_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/mat2x2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_mat2x2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_mat2x2.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_matrix.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat2x3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat2x3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat2x3.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat2x4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat2x4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat2x4.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat3x2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat3x2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat3x2.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat3x3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat3x3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat3x3.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat3x4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat3x4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat3x4.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat4x2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat4x2.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat4x2.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat4x3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat4x3.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat4x3.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../mat4x4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat4x4.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat4x4.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_mat4x4_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_matrix.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../geometric.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_geometric.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_geometric.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_exponential.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_vec1.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/type_vec1.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_exponential.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_vector_relational.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_vector_relational.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_vector_relational_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/_vectorize.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_exponential_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/../simd/exponential.h \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_common.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/_fixes.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_common.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_common_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/../simd/common.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/immintrin.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/ia32intrin.h \
@@ -257,40 +257,40 @@ CMakeFiles/museum.dir/src/render.cpp.o: \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/prfchwintrin.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/keylockerintrin.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/amxfp16intrin.h \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/func_geometric_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../detail/../simd/geometric.h \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_matrix_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../simd/matrix.h \
- /home/escazure/cpp_projects/museum/include/glm/trigonometric.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_trigonometric.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_trigonometric.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_trigonometric_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/exponential.hpp \
- /home/escazure/cpp_projects/museum/include/glm/common.hpp \
- /home/escazure/cpp_projects/museum/include/glm/packing.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_packing.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_packing.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_half.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/type_half.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_packing_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/matrix.hpp \
- /home/escazure/cpp_projects/museum/include/glm/vector_relational.hpp \
- /home/escazure/cpp_projects/museum/include/glm/integer.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_integer.hpp \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_integer.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/func_integer_simd.inl \
- /home/escazure/cpp_projects/museum/include/glm/detail/../simd/integer.h \
- /home/escazure/cpp_projects/museum/include/glm/gtc/matrix_transform.hpp \
- /home/escazure/cpp_projects/museum/include/glm/gtc/../gtc/constants.hpp \
- /home/escazure/cpp_projects/museum/include/glm/gtc/../gtc/constants.inl \
- /home/escazure/cpp_projects/museum/include/glm/gtc/matrix_transform.inl \
- /home/escazure/cpp_projects/museum/include/glm/gtc/type_ptr.hpp \
- /home/escazure/cpp_projects/museum/include/glm/gtc/../gtc/quaternion.hpp \
- /home/escazure/cpp_projects/museum/include/glm/gtc/../gtc/quaternion.inl \
- /home/escazure/cpp_projects/museum/include/glm/gtc/../gtc/quaternion_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/func_geometric_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../detail/../simd/geometric.h \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_matrix_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../simd/matrix.h \
+ /home/escazure/cpp_projects/glshowcase/include/glm/trigonometric.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_trigonometric.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_trigonometric.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_trigonometric_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/exponential.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/common.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/packing.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_packing.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_packing.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_half.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/type_half.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_packing_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/matrix.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/vector_relational.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/integer.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_integer.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_integer.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/func_integer_simd.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/detail/../simd/integer.h \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/matrix_transform.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/../gtc/constants.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/../gtc/constants.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/matrix_transform.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/type_ptr.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/../gtc/quaternion.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/../gtc/quaternion.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/../gtc/quaternion_simd.inl \
  /usr/include/c++/14.2/cstring /usr/include/string.h \
  /usr/include/strings.h \
- /home/escazure/cpp_projects/museum/include/glm/gtc/type_ptr.inl \
+ /home/escazure/cpp_projects/glshowcase/include/glm/gtc/type_ptr.inl \
  /usr/include/c++/14.2/iostream /usr/include/c++/14.2/ostream \
  /usr/include/c++/14.2/ios /usr/include/c++/14.2/iosfwd \
  /usr/include/c++/14.2/bits/stringfwd.h \
@@ -382,28 +382,28 @@ CMakeFiles/museum.dir/src/render.cpp.o: \
  /usr/include/c++/14.2/x86_64-unknown-linux-gnu/bits/c++io.h \
  /usr/include/c++/14.2/bits/fstream.tcc /usr/include/c++/14.2/sstream \
  /usr/include/c++/14.2/bits/sstream.tcc \
- /home/escazure/cpp_projects/museum/include/camera.h \
- /home/escazure/cpp_projects/museum/include/model.h \
- /home/escazure/cpp_projects/museum/include/stb_image/stb_image.h \
+ /home/escazure/cpp_projects/glshowcase/include/camera.h \
+ /home/escazure/cpp_projects/glshowcase/include/model.h \
+ /home/escazure/cpp_projects/glshowcase/include/stb_image/stb_image.h \
  /usr/include/c++/14.2/vector \
  /usr/include/c++/14.2/bits/stl_uninitialized.h \
  /usr/include/c++/14.2/bits/stl_vector.h \
  /usr/include/c++/14.2/bits/stl_bvector.h \
  /usr/include/c++/14.2/bits/vector.tcc \
- /home/escazure/cpp_projects/museum/include/assimp/Importer.hpp \
- /home/escazure/cpp_projects/museum/include/assimp/types.h \
- /home/escazure/cpp_projects/museum/include/assimp/defs.h \
- /home/escazure/cpp_projects/museum/include/assimp/config.h \
- /home/escazure/cpp_projects/museum/include/assimp/vector2.h \
- /home/escazure/cpp_projects/museum/include/assimp/vector3.h \
- /home/escazure/cpp_projects/museum/include/assimp/color4.h \
- /home/escazure/cpp_projects/museum/include/assimp/matrix3x3.h \
- /home/escazure/cpp_projects/museum/include/assimp/matrix4x4.h \
- /home/escazure/cpp_projects/museum/include/assimp/quaternion.h \
- /home/escazure/cpp_projects/museum/include/assimp/vector2.inl \
- /home/escazure/cpp_projects/museum/include/assimp/vector3.inl \
- /home/escazure/cpp_projects/museum/include/assimp/color4.inl \
- /home/escazure/cpp_projects/museum/include/assimp/matrix3x3.inl \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/Importer.hpp \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/types.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/defs.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/config.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/vector2.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/vector3.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/color4.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/matrix3x3.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/matrix4x4.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/quaternion.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/vector2.inl \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/vector3.inl \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/color4.inl \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/matrix3x3.inl \
  /usr/include/c++/14.2/algorithm /usr/include/c++/14.2/bits/stl_algo.h \
  /usr/include/c++/14.2/bits/algorithmfwd.h \
  /usr/include/c++/14.2/bits/stl_heap.h \
@@ -411,15 +411,15 @@ CMakeFiles/museum.dir/src/render.cpp.o: \
  /usr/include/c++/14.2/bits/stl_tempbuf.h \
  /usr/include/c++/14.2/pstl/glue_algorithm_defs.h \
  /usr/include/c++/14.2/pstl/execution_defs.h \
- /home/escazure/cpp_projects/museum/include/assimp/matrix4x4.inl \
- /home/escazure/cpp_projects/museum/include/assimp/MathFunctions.h \
- /home/escazure/cpp_projects/museum/include/assimp/quaternion.inl \
- /home/escazure/cpp_projects/museum/include/assimp/scene.h \
- /home/escazure/cpp_projects/museum/include/assimp/texture.h \
- /home/escazure/cpp_projects/museum/include/assimp/Compiler/pushpack1.h \
- /home/escazure/cpp_projects/museum/include/assimp/Compiler/poppack1.h \
- /home/escazure/cpp_projects/museum/include/assimp/mesh.h \
- /home/escazure/cpp_projects/museum/include/assimp/aabb.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/matrix4x4.inl \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/MathFunctions.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/quaternion.inl \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/scene.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/texture.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/Compiler/pushpack1.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/Compiler/poppack1.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/mesh.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/aabb.h \
  /usr/include/c++/14.2/unordered_set \
  /usr/include/c++/14.2/bits/unordered_set.h \
  /usr/include/c++/14.2/bits/hashtable.h \
@@ -428,20 +428,20 @@ CMakeFiles/museum.dir/src/render.cpp.o: \
  /usr/include/c++/14.2/bits/enable_special_members.h \
  /usr/include/c++/14.2/bits/node_handle.h \
  /usr/include/c++/14.2/bits/erase_if.h \
- /home/escazure/cpp_projects/museum/include/assimp/light.h \
- /home/escazure/cpp_projects/museum/include/assimp/camera.h \
- /home/escazure/cpp_projects/museum/include/assimp/material.h \
- /home/escazure/cpp_projects/museum/include/assimp/material.inl \
- /home/escazure/cpp_projects/museum/include/assimp/anim.h \
- /home/escazure/cpp_projects/museum/include/assimp/metadata.h \
- /home/escazure/cpp_projects/museum/include/assimp/postprocess.h \
- /home/escazure/cpp_projects/museum/include/context.h \
- /home/escazure/cpp_projects/museum/include/structs.h \
- /home/escazure/cpp_projects/museum/include/setup.h \
- /home/escazure/cpp_projects/museum/include/imgui/imgui.h \
- /home/escazure/cpp_projects/museum/include/imgui/imconfig.h \
- /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_glfw.h \
- /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_opengl3.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/light.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/camera.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/material.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/material.inl \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/anim.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/metadata.h \
+ /home/escazure/cpp_projects/glshowcase/include/assimp/postprocess.h \
+ /home/escazure/cpp_projects/glshowcase/include/structs.h \
+ /home/escazure/cpp_projects/glshowcase/include/render.h \
+ /home/escazure/cpp_projects/glshowcase/include/setup.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/imgui.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/imconfig.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/backends/imgui_impl_glfw.h \
+ /home/escazure/cpp_projects/glshowcase/include/imgui/backends/imgui_impl_opengl3.h \
  /usr/include/c++/14.2/random /usr/include/c++/14.2/bits/random.h \
  /usr/include/c++/14.2/x86_64-unknown-linux-gnu/bits/opt_random.h \
  /usr/include/c++/14.2/bits/random.tcc /usr/include/c++/14.2/numeric \

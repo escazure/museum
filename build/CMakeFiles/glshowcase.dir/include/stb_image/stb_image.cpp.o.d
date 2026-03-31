@@ -1,7 +1,7 @@
-CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o: \
- /home/escazure/cpp_projects/museum/include/stb_image/stb_image.cpp \
+CMakeFiles/glshowcase.dir/include/stb_image/stb_image.cpp.o: \
+ /home/escazure/cpp_projects/glshowcase/include/stb_image/stb_image.cpp \
  /usr/include/stdc-predef.h \
- /home/escazure/cpp_projects/museum/include/stb_image/stb_image.h \
+ /home/escazure/cpp_projects/glshowcase/include/stb_image/stb_image.h \
  /usr/include/stdio.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/escazure/cpp_projects/museum
+CMAKE_SOURCE_DIR = /home/escazure/cpp_projects/glshowcase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/escazure/cpp_projects/museum/build
+CMAKE_BINARY_DIR = /home/escazure/cpp_projects/glshowcase/build
 
 # Utility rule file for copy_assets.
 
@@ -67,9 +67,9 @@ include CMakeFiles/copy_assets.dir/compiler_depend.make
 include CMakeFiles/copy_assets.dir/progress.make
 
 CMakeFiles/copy_assets:
-	/usr/bin/cmake -E copy_directory /home/escazure/cpp_projects/museum/models /home/escazure/cpp_projects/museum/build/models
-	/usr/bin/cmake -E copy_directory /home/escazure/cpp_projects/museum/shaders /home/escazure/cpp_projects/museum/build/shaders
-	/usr/bin/cmake -E copy_directory /home/escazure/cpp_projects/museum/textures /home/escazure/cpp_projects/museum/build/textures
+	/usr/bin/cmake -E copy_directory /home/escazure/cpp_projects/glshowcase/models /home/escazure/cpp_projects/glshowcase/build/models
+	/usr/bin/cmake -E copy_directory /home/escazure/cpp_projects/glshowcase/shaders /home/escazure/cpp_projects/glshowcase/build/shaders
+	/usr/bin/cmake -E copy_directory /home/escazure/cpp_projects/glshowcase/textures /home/escazure/cpp_projects/glshowcase/build/textures
 
 CMakeFiles/copy_assets.dir/codegen:
 .PHONY : CMakeFiles/copy_assets.dir/codegen
@@ -87,6 +87,6 @@ CMakeFiles/copy_assets.dir/clean:
 .PHONY : CMakeFiles/copy_assets.dir/clean
 
 CMakeFiles/copy_assets.dir/depend:
-	cd /home/escazure/cpp_projects/museum/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/escazure/cpp_projects/museum /home/escazure/cpp_projects/museum /home/escazure/cpp_projects/museum/build /home/escazure/cpp_projects/museum/build /home/escazure/cpp_projects/museum/build/CMakeFiles/copy_assets.dir/DependInfo.cmake "--color=$(COLOR)" copy_assets
+	cd /home/escazure/cpp_projects/glshowcase/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/escazure/cpp_projects/glshowcase /home/escazure/cpp_projects/glshowcase /home/escazure/cpp_projects/glshowcase/build /home/escazure/cpp_projects/glshowcase/build /home/escazure/cpp_projects/glshowcase/build/CMakeFiles/copy_assets.dir/DependInfo.cmake "--color=$(COLOR)" copy_assets
 .PHONY : CMakeFiles/copy_assets.dir/depend
 

@@ -54,22 +54,22 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/escazure/cpp_projects/museum
+CMAKE_SOURCE_DIR = /home/escazure/cpp_projects/glshowcase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/escazure/cpp_projects/museum/build
+CMAKE_BINARY_DIR = /home/escazure/cpp_projects/glshowcase/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/copy_assets.dir/all
-all: CMakeFiles/museum.dir/all
+all: CMakeFiles/glshowcase.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/copy_assets.dir/codegen
-codegen: CMakeFiles/museum.dir/codegen
+codegen: CMakeFiles/glshowcase.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -78,7 +78,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/copy_assets.dir/clean
-clean: CMakeFiles/museum.dir/clean
+clean: CMakeFiles/glshowcase.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -88,14 +88,14 @@ clean: CMakeFiles/museum.dir/clean
 CMakeFiles/copy_assets.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num= "Built target copy_assets"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/glshowcase/build/CMakeFiles --progress-num= "Built target copy_assets"
 .PHONY : CMakeFiles/copy_assets.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/copy_assets.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/glshowcase/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/copy_assets.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/glshowcase/build/CMakeFiles 0
 .PHONY : CMakeFiles/copy_assets.dir/rule
 
 # Convenience name for target.
@@ -105,7 +105,7 @@ copy_assets: CMakeFiles/copy_assets.dir/rule
 # codegen rule for target.
 CMakeFiles/copy_assets.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num= "Finished codegen for target copy_assets"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/glshowcase/build/CMakeFiles --progress-num= "Finished codegen for target copy_assets"
 .PHONY : CMakeFiles/copy_assets.dir/codegen
 
 # clean rule for target.
@@ -114,36 +114,36 @@ CMakeFiles/copy_assets.dir/clean:
 .PHONY : CMakeFiles/copy_assets.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/museum.dir
+# Target rules for target CMakeFiles/glshowcase.dir
 
 # All Build rule for target.
-CMakeFiles/museum.dir/all: CMakeFiles/copy_assets.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target museum"
-.PHONY : CMakeFiles/museum.dir/all
+CMakeFiles/glshowcase.dir/all: CMakeFiles/copy_assets.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/glshowcase/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target glshowcase"
+.PHONY : CMakeFiles/glshowcase.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/museum.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 14
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/museum.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 0
-.PHONY : CMakeFiles/museum.dir/rule
+CMakeFiles/glshowcase.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/glshowcase/build/CMakeFiles 14
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glshowcase.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/glshowcase/build/CMakeFiles 0
+.PHONY : CMakeFiles/glshowcase.dir/rule
 
 # Convenience name for target.
-museum: CMakeFiles/museum.dir/rule
-.PHONY : museum
+glshowcase: CMakeFiles/glshowcase.dir/rule
+.PHONY : glshowcase
 
 # codegen rule for target.
-CMakeFiles/museum.dir/codegen: CMakeFiles/copy_assets.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Finished codegen for target museum"
-.PHONY : CMakeFiles/museum.dir/codegen
+CMakeFiles/glshowcase.dir/codegen: CMakeFiles/copy_assets.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/glshowcase/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Finished codegen for target glshowcase"
+.PHONY : CMakeFiles/glshowcase.dir/codegen
 
 # clean rule for target.
-CMakeFiles/museum.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/clean
-.PHONY : CMakeFiles/museum.dir/clean
+CMakeFiles/glshowcase.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glshowcase.dir/build.make CMakeFiles/glshowcase.dir/clean
+.PHONY : CMakeFiles/glshowcase.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

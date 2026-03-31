@@ -1,21 +1,21 @@
-museum: \
+glshowcase: \
   /usr/lib64/gcc/x86_64-unknown-linux-gnu/14.2.1/../../../../lib64/Scrt1.o \
   /usr/lib64/gcc/x86_64-unknown-linux-gnu/14.2.1/../../../../lib64/crti.o \
   /usr/lib64/gcc/x86_64-unknown-linux-gnu/14.2.1/crtbeginS.o \
-  CMakeFiles/museum.dir/src/context.cpp.o \
-  CMakeFiles/museum.dir/src/core.cpp.o \
-  CMakeFiles/museum.dir/src/main.cpp.o \
-  CMakeFiles/museum.dir/src/render.cpp.o \
-  CMakeFiles/museum.dir/src/setup.cpp.o \
-  CMakeFiles/museum.dir/include/imgui/imgui.cpp.o \
-  CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o \
-  CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o \
-  CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o \
-  CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o \
-  CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o \
-  CMakeFiles/museum.dir/include/gl3w/gl3w.c.o \
-  CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o \
-  /home/escazure/cpp_projects/museum/libs/libassimp.so \
+  CMakeFiles/glshowcase.dir/src/context.cpp.o \
+  CMakeFiles/glshowcase.dir/src/core.cpp.o \
+  CMakeFiles/glshowcase.dir/src/main.cpp.o \
+  CMakeFiles/glshowcase.dir/src/render.cpp.o \
+  CMakeFiles/glshowcase.dir/src/setup.cpp.o \
+  CMakeFiles/glshowcase.dir/include/imgui/imgui.cpp.o \
+  CMakeFiles/glshowcase.dir/include/imgui/imgui_draw.cpp.o \
+  CMakeFiles/glshowcase.dir/include/imgui/imgui_tables.cpp.o \
+  CMakeFiles/glshowcase.dir/include/imgui/imgui_widgets.cpp.o \
+  CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_glfw.cpp.o \
+  CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o \
+  CMakeFiles/glshowcase.dir/include/gl3w/gl3w.c.o \
+  CMakeFiles/glshowcase.dir/include/stb_image/stb_image.cpp.o \
+  /home/escazure/cpp_projects/glshowcase/libs/libassimp.so \
   /usr/lib64/gcc/x86_64-unknown-linux-gnu/14.2.1/../../../../lib64/libglfw.so \
   /usr/lib64/gcc/x86_64-unknown-linux-gnu/14.2.1/../../../../lib64/libdl.a \
   /usr/lib/libGLX.so \
@@ -66,33 +66,33 @@ museum: \
 
 /usr/lib64/gcc/x86_64-unknown-linux-gnu/14.2.1/crtbeginS.o:
 
-CMakeFiles/museum.dir/src/context.cpp.o:
+CMakeFiles/glshowcase.dir/src/context.cpp.o:
 
-CMakeFiles/museum.dir/src/core.cpp.o:
+CMakeFiles/glshowcase.dir/src/core.cpp.o:
 
-CMakeFiles/museum.dir/src/main.cpp.o:
+CMakeFiles/glshowcase.dir/src/main.cpp.o:
 
-CMakeFiles/museum.dir/src/render.cpp.o:
+CMakeFiles/glshowcase.dir/src/render.cpp.o:
 
-CMakeFiles/museum.dir/src/setup.cpp.o:
+CMakeFiles/glshowcase.dir/src/setup.cpp.o:
 
-CMakeFiles/museum.dir/include/imgui/imgui.cpp.o:
+CMakeFiles/glshowcase.dir/include/imgui/imgui.cpp.o:
 
-CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o:
+CMakeFiles/glshowcase.dir/include/imgui/imgui_draw.cpp.o:
 
-CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o:
+CMakeFiles/glshowcase.dir/include/imgui/imgui_tables.cpp.o:
 
-CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o:
+CMakeFiles/glshowcase.dir/include/imgui/imgui_widgets.cpp.o:
 
-CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o:
+CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_glfw.cpp.o:
 
-CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o:
+CMakeFiles/glshowcase.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o:
 
-CMakeFiles/museum.dir/include/gl3w/gl3w.c.o:
+CMakeFiles/glshowcase.dir/include/gl3w/gl3w.c.o:
 
-CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o:
+CMakeFiles/glshowcase.dir/include/stb_image/stb_image.cpp.o:
 
-/home/escazure/cpp_projects/museum/libs/libassimp.so:
+/home/escazure/cpp_projects/glshowcase/libs/libassimp.so:
 
 /usr/lib64/gcc/x86_64-unknown-linux-gnu/14.2.1/../../../../lib64/libglfw.so:
 

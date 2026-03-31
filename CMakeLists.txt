@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(museum LANGUAGES C CXX)
+project(glshowcase LANGUAGES C CXX)
 
 file(GLOB CPP_SRCS src/*.cpp)
 
@@ -24,14 +24,14 @@ add_custom_target(copy_assets ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/textures ${CMAKE_BINARY_DIR}/textures
 )
 
-add_executable(museum
+add_executable(glshowcase
    	${CPP_SRCS}
 	${IMGUI_SRCS}
 	${GL3W_SRC}
 	${STBI_SRC}
 )
 
-target_include_directories(museum PRIVATE
+target_include_directories(glshowcase PRIVATE
     include
     include/imgui
     include/imgui/backends
@@ -40,19 +40,19 @@ target_include_directories(museum PRIVATE
 )
 
 find_package(OpenGL REQUIRED)
-target_link_libraries(museum PRIVATE 
+target_link_libraries(glshowcase PRIVATE 
 	${CMAKE_SOURCE_DIR}/libs/libassimp.so
     glfw
     OpenGL::GL
     dl
 )
 
-target_compile_options(museum PRIVATE -Wno-pragmas)
+target_compile_options(glshowcase PRIVATE -Wno-pragmas)
 
 if(UNIX AND NOT APPLE)
-    set_target_properties(museum PROPERTIES
+    set_target_properties(glshowcase PROPERTIES
         BUILD_RPATH "${CMAKE_SOURCE_DIR}/libs"
     )
 endif()
 
-add_dependencies(museum copy_assets)
+add_dependencies(glshowcase copy_assets)

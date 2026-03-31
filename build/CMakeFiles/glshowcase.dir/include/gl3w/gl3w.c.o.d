@@ -1,7 +1,7 @@
-CMakeFiles/museum.dir/include/gl3w/gl3w.c.o: \
- /home/escazure/cpp_projects/museum/include/gl3w/gl3w.c \
+CMakeFiles/glshowcase.dir/include/gl3w/gl3w.c.o: \
+ /home/escazure/cpp_projects/glshowcase/include/gl3w/gl3w.c \
  /usr/include/stdc-predef.h \
- /home/escazure/cpp_projects/museum/include/gl3w/gl3w.h \
+ /home/escazure/cpp_projects/glshowcase/include/gl3w/gl3w.h \
  /usr/include/GL/glcorearb.h /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/14.2/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
