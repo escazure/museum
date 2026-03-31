@@ -34,7 +34,6 @@ void init(){
 	g_context.win_width = mode->width;
 	g_context.win_height = mode->height;
 	g_context.window = window;
-	g_context.show_normals = false;
 }
 
 void run(){
@@ -357,8 +356,12 @@ void update_ubos(unsigned int& matrix_ubo, unsigned int& light_ubo, glm::vec3& l
 	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
 	glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
+	float inner_cutoff = glm::cos(glm::radians(g_context.spot_inner_cutoff));
+	float outer_cutoff = glm::cos(glm::radians(g_context.spot_outer_cutoff));
 	glBindBuffer(GL_UNIFORM_BUFFER, light_ubo);	
 	glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::vec3), glm::value_ptr(lightPos));
+	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight)*2 + sizeof(DirLight) + sizeof(glm::vec3), sizeof(float), &inner_cutoff);
+	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(PointLight)*2 + sizeof(DirLight) + sizeof(glm::vec4) + sizeof(glm::vec3), sizeof(float), &outer_cutoff);
 	glBindBuffer(GL_UNIFORM_BUFFER, 0);
 }
 

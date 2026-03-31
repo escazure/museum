@@ -383,6 +383,8 @@ void render_gui(){
 		ImGui::Indent(20.0f);
 		ImGui::RadioButton("Phong", &g_context.use_blinn, 0);
 		ImGui::RadioButton("Blinn-Phong", &g_context.use_blinn, 1);
+		ImGui::SliderFloat("Inner cutoff", &g_context.spot_inner_cutoff, 0, 15.0f);
+		ImGui::SliderFloat("Outer cutoff", &g_context.spot_outer_cutoff, 15.0f, 30.0f);
 		ImGui::Unindent(20.0f);
 	}
 

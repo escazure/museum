@@ -21,9 +21,11 @@ class Context {
 	float scale = 1.0f;
 	float max_bias = 0.05f;
 	float min_bias = 0.005f;
+	float spot_inner_cutoff = 15.0f;
+	float spot_outer_cutoff = 20.0f;
 
-	bool show_normals;
-	bool show_depth_map;
+	bool show_normals = false;
+	bool show_depth_map = false;
 	bool rotate_light;
 	bool use_gamma_correction = true;
 	bool capture_mouse = true;
