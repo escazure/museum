@@ -75,7 +75,7 @@ This project is a real-time graphics showcase built in C++/OpenGL. It demonstrat
 #### Post-Processing
 | Gamma correction | Without gamma correction | Inverse | Grayscale | Gaussian blur |
 |------------|------------|-------------------|-------------------|-------------------|
-| <div align="center"><img src="assets/post_process/gamma.png" alt="gamma" width="200"/></div>  | <div align="center"><img src="assets/post_process/no_gamma.png" alt="no gamma" width="200"/></div>  | <div align="center"><img src="assets/post_process/inverse.png" alt="inverse" width="200"/></div> | <div align="center"><img src="assets/post_process/grayscale.png" alt="grayscale" width="200"/></div> | <div align="center"><img src="assets/post_process/g_blur.png" alt="gaussian_blur" width="200"/></div> |
+| <div align="center"><img src="assets/post_process/gamma.png" alt="gamma" width="200"/></div>  | <div align="center"><img src="assets/post_process/no_gamma.png" alt="no gamma" width="200"/></div>  | <div align="center"><img src="assets/post_process/inverse.png" alt="inverse" width="200"/></div> | <div align="center"><img src="assets/post_process/grayscale.png" alt="grayscale" width="200"/></div> | <div align="center"><img src="assets/post_process/gaussian_blur.png" alt="gaussian_blur" width="200"/></div> |
 
 ---
 ### Dependencies:
