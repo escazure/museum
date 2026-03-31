@@ -36,13 +36,13 @@ This project is a real-time graphics showcase built in C++/OpenGL. It demonstrat
 
 #### Instancing Demo
 *10K instances ~45fps*
-<div align="center"><img src="assets/instancing.gif" alt="instancing" width="500"/></div>
+<div align="left"><img src="assets/instancing.gif" alt="instancing" width="300"/></div>
 
 
 ---
 
 #### Particle Demo
-<div align="center"><img src="assets/particles.gif" alt="particles" width="500"/></div>
+<div align="left"><img src="assets/particles.gif" alt="particles" width="300"/></div>
 
 ---
 
@@ -51,7 +51,7 @@ This project is a real-time graphics showcase built in C++/OpenGL. It demonstrat
 
 | Cube | Sphere | Torus |
 |------|--------|-------|
-| <div align="center"><img src="assets/procedural/cube.gif" alt="cube" width="300"/></div> | <div align="center"><img src="assets/procedural/sphere.gif" alt="sphere" width="300"/></div> | <div align="center"><img src="assets/procedural/torus.gif" alt="torus" width="300"/></div> |
+| <div align="center"><img src="assets/procedural/cube.gif" alt="cube" width="280"/></div> | <div align="center"><img src="assets/procedural/sphere.gif" alt="sphere" width="280"/></div> | <div align="center"><img src="assets/procedural/torus.gif" alt="torus" width="280"/></div> |
 
 ---
 
