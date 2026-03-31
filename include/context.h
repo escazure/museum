@@ -1,13 +1,6 @@
 #pragma once
 #include "core.h"
-
-struct Particle {
-	glm::vec3 position;
-	glm::vec3 velocity;
-	float life;
-	float max_life;
-	float scale;
-};
+#include "structs.h"
 
 class Context {
 	public: 
@@ -26,6 +19,8 @@ class Context {
 	const float max_particle_lifetime = 5.0f;
 	float cloud_speed = 0.01f;
 	float scale = 1.0f;
+	float max_bias = 0.05f;
+	float min_bias = 0.005f;
 
 	bool show_normals;
 	bool show_depth_map;
@@ -33,6 +28,7 @@ class Context {
 	bool use_gamma_correction = true;
 	bool capture_mouse = true;
 	bool resize_requested = false;
+	bool cull_front_faces = false;
 
 	int post_processing_mode;
 	int demo_mode;
@@ -52,3 +48,5 @@ class Context {
 		particles_list.resize(max_particle_count);
 	}
 };
+
+extern Context g_context;

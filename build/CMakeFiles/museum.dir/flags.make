@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/escazure/cpp_projects/museum/include -I/home/escazure/cpp_projects/museum/include/imgui -I/home/escazure/cpp_projects/museum/include/GLFW -I/home/escazure/cpp_projects/museum/include/imgui/backends -I/home/escazure/cpp_projects/museum/include/gl3w
+C_INCLUDES = -I/home/escazure/cpp_projects/museum/include -I/home/escazure/cpp_projects/museum/include/imgui -I/home/escazure/cpp_projects/museum/include/imgui/backends -I/home/escazure/cpp_projects/museum/include/gl3w -I/home/escazure/cpp_projects/museum/include/stb_image
 
-C_FLAGS = 
+C_FLAGS = -Wno-pragmas
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/escazure/cpp_projects/museum/include -I/home/escazure/cpp_projects/museum/include/imgui -I/home/escazure/cpp_projects/museum/include/GLFW -I/home/escazure/cpp_projects/museum/include/imgui/backends -I/home/escazure/cpp_projects/museum/include/gl3w
+CXX_INCLUDES = -I/home/escazure/cpp_projects/museum/include -I/home/escazure/cpp_projects/museum/include/imgui -I/home/escazure/cpp_projects/museum/include/imgui/backends -I/home/escazure/cpp_projects/museum/include/gl3w -I/home/escazure/cpp_projects/museum/include/stb_image
 
-CXX_FLAGS = 
+CXX_FLAGS = -Wno-pragmas
 

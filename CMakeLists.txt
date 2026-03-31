@@ -12,7 +12,10 @@ set(IMGUI_SRCS
     include/imgui/backends/imgui_impl_opengl3.cpp
 )
 
-set(GL3W_SOURCES include/gl3w/gl3w.c)
+set(STBI_SRC include/stb_image/stb_image.cpp)
+set(STBI_INCLUDE include/stb_image)
+
+set(GL3W_SRC include/gl3w/gl3w.c)
 set(GL3W_INCLUDE include/gl3w)
 
 add_custom_target(copy_assets ALL
@@ -23,16 +26,17 @@ add_custom_target(copy_assets ALL
 
 add_executable(museum
    	${CPP_SRCS}
-   	${IMGUI_SRCS}
-   	${GL3W_SOURCES}
+	${IMGUI_SRCS}
+	${GL3W_SRC}
+	${STBI_SRC}
 )
 
 target_include_directories(museum PRIVATE
     include
     include/imgui
-	include/GLFW
     include/imgui/backends
     ${GL3W_INCLUDE}
+	${STBI_INCLUDE}
 )
 
 find_package(OpenGL REQUIRED)
@@ -42,6 +46,8 @@ target_link_libraries(museum PRIVATE
     OpenGL::GL
     dl
 )
+
+target_compile_options(museum PRIVATE -Wno-pragmas)
 
 if(UNIX AND NOT APPLE)
     set_target_properties(museum PROPERTIES

@@ -72,10 +72,24 @@ include CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/codegen:
 .PHONY : CMakeFiles/museum.dir/codegen
 
+CMakeFiles/museum.dir/src/context.cpp.o: CMakeFiles/museum.dir/flags.make
+CMakeFiles/museum.dir/src/context.cpp.o: /home/escazure/cpp_projects/museum/src/context.cpp
+CMakeFiles/museum.dir/src/context.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/museum.dir/src/context.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/src/context.cpp.o -MF CMakeFiles/museum.dir/src/context.cpp.o.d -o CMakeFiles/museum.dir/src/context.cpp.o -c /home/escazure/cpp_projects/museum/src/context.cpp
+
+CMakeFiles/museum.dir/src/context.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/museum.dir/src/context.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/escazure/cpp_projects/museum/src/context.cpp > CMakeFiles/museum.dir/src/context.cpp.i
+
+CMakeFiles/museum.dir/src/context.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/museum.dir/src/context.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/escazure/cpp_projects/museum/src/context.cpp -o CMakeFiles/museum.dir/src/context.cpp.s
+
 CMakeFiles/museum.dir/src/core.cpp.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/src/core.cpp.o: /home/escazure/cpp_projects/museum/src/core.cpp
 CMakeFiles/museum.dir/src/core.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/museum.dir/src/core.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/museum.dir/src/core.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/src/core.cpp.o -MF CMakeFiles/museum.dir/src/core.cpp.o.d -o CMakeFiles/museum.dir/src/core.cpp.o -c /home/escazure/cpp_projects/museum/src/core.cpp
 
 CMakeFiles/museum.dir/src/core.cpp.i: cmake_force
@@ -86,24 +100,52 @@ CMakeFiles/museum.dir/src/core.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/museum.dir/src/core.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/escazure/cpp_projects/museum/src/core.cpp -o CMakeFiles/museum.dir/src/core.cpp.s
 
-CMakeFiles/museum.dir/src/stb_image.cpp.o: CMakeFiles/museum.dir/flags.make
-CMakeFiles/museum.dir/src/stb_image.cpp.o: /home/escazure/cpp_projects/museum/src/stb_image.cpp
-CMakeFiles/museum.dir/src/stb_image.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/museum.dir/src/stb_image.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/src/stb_image.cpp.o -MF CMakeFiles/museum.dir/src/stb_image.cpp.o.d -o CMakeFiles/museum.dir/src/stb_image.cpp.o -c /home/escazure/cpp_projects/museum/src/stb_image.cpp
+CMakeFiles/museum.dir/src/main.cpp.o: CMakeFiles/museum.dir/flags.make
+CMakeFiles/museum.dir/src/main.cpp.o: /home/escazure/cpp_projects/museum/src/main.cpp
+CMakeFiles/museum.dir/src/main.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/museum.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/src/main.cpp.o -MF CMakeFiles/museum.dir/src/main.cpp.o.d -o CMakeFiles/museum.dir/src/main.cpp.o -c /home/escazure/cpp_projects/museum/src/main.cpp
 
-CMakeFiles/museum.dir/src/stb_image.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/museum.dir/src/stb_image.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/escazure/cpp_projects/museum/src/stb_image.cpp > CMakeFiles/museum.dir/src/stb_image.cpp.i
+CMakeFiles/museum.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/museum.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/escazure/cpp_projects/museum/src/main.cpp > CMakeFiles/museum.dir/src/main.cpp.i
 
-CMakeFiles/museum.dir/src/stb_image.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/museum.dir/src/stb_image.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/escazure/cpp_projects/museum/src/stb_image.cpp -o CMakeFiles/museum.dir/src/stb_image.cpp.s
+CMakeFiles/museum.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/museum.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/escazure/cpp_projects/museum/src/main.cpp -o CMakeFiles/museum.dir/src/main.cpp.s
+
+CMakeFiles/museum.dir/src/render.cpp.o: CMakeFiles/museum.dir/flags.make
+CMakeFiles/museum.dir/src/render.cpp.o: /home/escazure/cpp_projects/museum/src/render.cpp
+CMakeFiles/museum.dir/src/render.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/museum.dir/src/render.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/src/render.cpp.o -MF CMakeFiles/museum.dir/src/render.cpp.o.d -o CMakeFiles/museum.dir/src/render.cpp.o -c /home/escazure/cpp_projects/museum/src/render.cpp
+
+CMakeFiles/museum.dir/src/render.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/museum.dir/src/render.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/escazure/cpp_projects/museum/src/render.cpp > CMakeFiles/museum.dir/src/render.cpp.i
+
+CMakeFiles/museum.dir/src/render.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/museum.dir/src/render.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/escazure/cpp_projects/museum/src/render.cpp -o CMakeFiles/museum.dir/src/render.cpp.s
+
+CMakeFiles/museum.dir/src/setup.cpp.o: CMakeFiles/museum.dir/flags.make
+CMakeFiles/museum.dir/src/setup.cpp.o: /home/escazure/cpp_projects/museum/src/setup.cpp
+CMakeFiles/museum.dir/src/setup.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/museum.dir/src/setup.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/src/setup.cpp.o -MF CMakeFiles/museum.dir/src/setup.cpp.o.d -o CMakeFiles/museum.dir/src/setup.cpp.o -c /home/escazure/cpp_projects/museum/src/setup.cpp
+
+CMakeFiles/museum.dir/src/setup.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/museum.dir/src/setup.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/escazure/cpp_projects/museum/src/setup.cpp > CMakeFiles/museum.dir/src/setup.cpp.i
+
+CMakeFiles/museum.dir/src/setup.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/museum.dir/src/setup.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/escazure/cpp_projects/museum/src/setup.cpp -o CMakeFiles/museum.dir/src/setup.cpp.s
 
 CMakeFiles/museum.dir/include/imgui/imgui.cpp.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/include/imgui/imgui.cpp.o: /home/escazure/cpp_projects/museum/include/imgui/imgui.cpp
 CMakeFiles/museum.dir/include/imgui/imgui.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/include/imgui/imgui.cpp.o -MF CMakeFiles/museum.dir/include/imgui/imgui.cpp.o.d -o CMakeFiles/museum.dir/include/imgui/imgui.cpp.o -c /home/escazure/cpp_projects/museum/include/imgui/imgui.cpp
 
 CMakeFiles/museum.dir/include/imgui/imgui.cpp.i: cmake_force
@@ -117,7 +159,7 @@ CMakeFiles/museum.dir/include/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o: /home/escazure/cpp_projects/museum/include/imgui/imgui_draw.cpp
 CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o -MF CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o.d -o CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o -c /home/escazure/cpp_projects/museum/include/imgui/imgui_draw.cpp
 
 CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.i: cmake_force
@@ -131,7 +173,7 @@ CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o: /home/escazure/cpp_projects/museum/include/imgui/imgui_tables.cpp
 CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o -MF CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o.d -o CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o -c /home/escazure/cpp_projects/museum/include/imgui/imgui_tables.cpp
 
 CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.i: cmake_force
@@ -145,7 +187,7 @@ CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.s: cmake_force
 CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o: /home/escazure/cpp_projects/museum/include/imgui/imgui_widgets.cpp
 CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o -MF CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o -c /home/escazure/cpp_projects/museum/include/imgui/imgui_widgets.cpp
 
 CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.i: cmake_force
@@ -159,7 +201,7 @@ CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.s: cmake_force
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o: /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_glfw.cpp
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o -c /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -173,7 +215,7 @@ CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o: /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_opengl3.cpp
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/escazure/cpp_projects/museum/include/imgui/backends/imgui_impl_opengl3.cpp
 
 CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -187,7 +229,7 @@ CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_for
 CMakeFiles/museum.dir/include/gl3w/gl3w.c.o: CMakeFiles/museum.dir/flags.make
 CMakeFiles/museum.dir/include/gl3w/gl3w.c.o: /home/escazure/cpp_projects/museum/include/gl3w/gl3w.c
 CMakeFiles/museum.dir/include/gl3w/gl3w.c.o: CMakeFiles/museum.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/museum.dir/include/gl3w/gl3w.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/museum.dir/include/gl3w/gl3w.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/museum.dir/include/gl3w/gl3w.c.o -MF CMakeFiles/museum.dir/include/gl3w/gl3w.c.o.d -o CMakeFiles/museum.dir/include/gl3w/gl3w.c.o -c /home/escazure/cpp_projects/museum/include/gl3w/gl3w.c
 
 CMakeFiles/museum.dir/include/gl3w/gl3w.c.i: cmake_force
@@ -198,23 +240,44 @@ CMakeFiles/museum.dir/include/gl3w/gl3w.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/museum.dir/include/gl3w/gl3w.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/escazure/cpp_projects/museum/include/gl3w/gl3w.c -o CMakeFiles/museum.dir/include/gl3w/gl3w.c.s
 
+CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o: CMakeFiles/museum.dir/flags.make
+CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o: /home/escazure/cpp_projects/museum/include/stb_image/stb_image.cpp
+CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o: CMakeFiles/museum.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o -MF CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o.d -o CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o -c /home/escazure/cpp_projects/museum/include/stb_image/stb_image.cpp
+
+CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/escazure/cpp_projects/museum/include/stb_image/stb_image.cpp > CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.i
+
+CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/escazure/cpp_projects/museum/include/stb_image/stb_image.cpp -o CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.s
+
 # Object files for target museum
 museum_OBJECTS = \
+"CMakeFiles/museum.dir/src/context.cpp.o" \
 "CMakeFiles/museum.dir/src/core.cpp.o" \
-"CMakeFiles/museum.dir/src/stb_image.cpp.o" \
+"CMakeFiles/museum.dir/src/main.cpp.o" \
+"CMakeFiles/museum.dir/src/render.cpp.o" \
+"CMakeFiles/museum.dir/src/setup.cpp.o" \
 "CMakeFiles/museum.dir/include/imgui/imgui.cpp.o" \
 "CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o" \
 "CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o" \
 "CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o" \
 "CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o" \
 "CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o" \
-"CMakeFiles/museum.dir/include/gl3w/gl3w.c.o"
+"CMakeFiles/museum.dir/include/gl3w/gl3w.c.o" \
+"CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o"
 
 # External object files for target museum
 museum_EXTERNAL_OBJECTS =
 
+museum: CMakeFiles/museum.dir/src/context.cpp.o
 museum: CMakeFiles/museum.dir/src/core.cpp.o
-museum: CMakeFiles/museum.dir/src/stb_image.cpp.o
+museum: CMakeFiles/museum.dir/src/main.cpp.o
+museum: CMakeFiles/museum.dir/src/render.cpp.o
+museum: CMakeFiles/museum.dir/src/setup.cpp.o
 museum: CMakeFiles/museum.dir/include/imgui/imgui.cpp.o
 museum: CMakeFiles/museum.dir/include/imgui/imgui_draw.cpp.o
 museum: CMakeFiles/museum.dir/include/imgui/imgui_tables.cpp.o
@@ -222,13 +285,14 @@ museum: CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.o
 museum: CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_glfw.cpp.o
 museum: CMakeFiles/museum.dir/include/imgui/backends/imgui_impl_opengl3.cpp.o
 museum: CMakeFiles/museum.dir/include/gl3w/gl3w.c.o
+museum: CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o
 museum: CMakeFiles/museum.dir/build.make
 museum: CMakeFiles/museum.dir/compiler_depend.ts
 museum: /home/escazure/cpp_projects/museum/libs/libassimp.so
 museum: /usr/lib/libGLX.so
 museum: /usr/lib/libOpenGL.so
 museum: CMakeFiles/museum.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable museum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable museum"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/museum.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

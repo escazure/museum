@@ -50,11 +50,12 @@ uniform bool showNormals;
 uniform bool hasSpecular;
 uniform bool useBlinn;
 uniform bool calculateShadows;
-uniform bool useSmallerBias;
 
 uniform float dirLightIntensity;
 uniform float pointLightIntensity;
 uniform float spotLightIntensity;
+uniform float max_bias;
+uniform float min_bias;
 
 vec3 calcDirLight(DirLight light, vec3 normal, vec3 viewDir);
 vec3 calcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir);
@@ -213,10 +214,7 @@ float calcShadows(vec4 fragLightSpacePos, vec3 normal, vec3 lightDir){
 	projCoords = projCoords * 0.5 + 0.5;
 	float currentDepth = projCoords.z;
 	float bias;
-	bias = max(0.005 * (1.0 - dot(normal, lightDir)), 0.0005);
-	if(useSmallerBias){
-		bias = max(0.05 * (1.0 - dot(normal, lightDir)), 0.005);
-	}
+	bias = max(max_bias * (1.0 - dot(normal, lightDir)), min_bias);
 
 	float shadow = 0.0;
 	vec2 texel_size = 1.0 / textureSize(depth_map, 0);

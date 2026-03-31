@@ -1,6 +1,7 @@
-CMakeFiles/museum.dir/src/core.cpp.o: \
- /home/escazure/cpp_projects/museum/src/core.cpp \
+CMakeFiles/museum.dir/src/render.cpp.o: \
+ /home/escazure/cpp_projects/museum/src/render.cpp \
  /usr/include/stdc-predef.h \
+ /home/escazure/cpp_projects/museum/include/render.h \
  /home/escazure/cpp_projects/museum/include/core.h \
  /home/escazure/cpp_projects/museum/include/gl3w/gl3w.h \
  /usr/include/GL/glcorearb.h /usr/include/KHR/khrplatform.h \
@@ -436,7 +437,6 @@ CMakeFiles/museum.dir/src/core.cpp.o: \
  /home/escazure/cpp_projects/museum/include/assimp/postprocess.h \
  /home/escazure/cpp_projects/museum/include/context.h \
  /home/escazure/cpp_projects/museum/include/structs.h \
- /home/escazure/cpp_projects/museum/include/render.h \
  /home/escazure/cpp_projects/museum/include/setup.h \
  /home/escazure/cpp_projects/museum/include/imgui/imgui.h \
  /home/escazure/cpp_projects/museum/include/imgui/imconfig.h \

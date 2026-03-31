@@ -12,7 +12,7 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-unsigned int load_texture_2d(const char* path, bool is_diffuse, bool do_tile = true){
+inline unsigned int load_texture_2d(const char* path, bool is_diffuse, bool do_tile = true){
 	unsigned int texture;
 	glGenTextures(1, &texture);
 	glBindTexture(GL_TEXTURE_2D, texture);	
@@ -120,7 +120,7 @@ class Mesh {
 class Model{
 	public:
 		std::vector<Mesh> meshes;
-		Model(char* path){
+		Model(const char* path){
 			loadModel(path);
 		}
 

@@ -310,6 +310,54 @@ include/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/imgui/imgui_widgets.cpp.s
 .PHONY : include/imgui/imgui_widgets.cpp.s
 
+include/stb_image/stb_image.o: include/stb_image/stb_image.cpp.o
+.PHONY : include/stb_image/stb_image.o
+
+# target to build an object file
+include/stb_image/stb_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.o
+.PHONY : include/stb_image/stb_image.cpp.o
+
+include/stb_image/stb_image.i: include/stb_image/stb_image.cpp.i
+.PHONY : include/stb_image/stb_image.i
+
+# target to preprocess a source file
+include/stb_image/stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.i
+.PHONY : include/stb_image/stb_image.cpp.i
+
+include/stb_image/stb_image.s: include/stb_image/stb_image.cpp.s
+.PHONY : include/stb_image/stb_image.s
+
+# target to generate assembly for a file
+include/stb_image/stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/include/stb_image/stb_image.cpp.s
+.PHONY : include/stb_image/stb_image.cpp.s
+
+src/context.o: src/context.cpp.o
+.PHONY : src/context.o
+
+# target to build an object file
+src/context.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/context.cpp.o
+.PHONY : src/context.cpp.o
+
+src/context.i: src/context.cpp.i
+.PHONY : src/context.i
+
+# target to preprocess a source file
+src/context.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/context.cpp.i
+.PHONY : src/context.cpp.i
+
+src/context.s: src/context.cpp.s
+.PHONY : src/context.s
+
+# target to generate assembly for a file
+src/context.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/context.cpp.s
+.PHONY : src/context.cpp.s
+
 src/core.o: src/core.cpp.o
 .PHONY : src/core.o
 
@@ -334,29 +382,77 @@ src/core.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/core.cpp.s
 .PHONY : src/core.cpp.s
 
-src/stb_image.o: src/stb_image.cpp.o
-.PHONY : src/stb_image.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/stb_image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/stb_image.cpp.o
-.PHONY : src/stb_image.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/stb_image.i: src/stb_image.cpp.i
-.PHONY : src/stb_image.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/stb_image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/stb_image.cpp.i
-.PHONY : src/stb_image.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/stb_image.s: src/stb_image.cpp.s
-.PHONY : src/stb_image.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/stb_image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/stb_image.cpp.s
-.PHONY : src/stb_image.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/render.o: src/render.cpp.o
+.PHONY : src/render.o
+
+# target to build an object file
+src/render.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/render.cpp.o
+.PHONY : src/render.cpp.o
+
+src/render.i: src/render.cpp.i
+.PHONY : src/render.i
+
+# target to preprocess a source file
+src/render.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/render.cpp.i
+.PHONY : src/render.cpp.i
+
+src/render.s: src/render.cpp.s
+.PHONY : src/render.s
+
+# target to generate assembly for a file
+src/render.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/render.cpp.s
+.PHONY : src/render.cpp.s
+
+src/setup.o: src/setup.cpp.o
+.PHONY : src/setup.o
+
+# target to build an object file
+src/setup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/setup.cpp.o
+.PHONY : src/setup.cpp.o
+
+src/setup.i: src/setup.cpp.i
+.PHONY : src/setup.i
+
+# target to preprocess a source file
+src/setup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/setup.cpp.i
+.PHONY : src/setup.cpp.i
+
+src/setup.s: src/setup.cpp.s
+.PHONY : src/setup.s
+
+# target to generate assembly for a file
+src/setup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/src/setup.cpp.s
+.PHONY : src/setup.cpp.s
 
 # Help Target
 help:
@@ -389,12 +485,24 @@ help:
 	@echo "... include/imgui/imgui_widgets.o"
 	@echo "... include/imgui/imgui_widgets.i"
 	@echo "... include/imgui/imgui_widgets.s"
+	@echo "... include/stb_image/stb_image.o"
+	@echo "... include/stb_image/stb_image.i"
+	@echo "... include/stb_image/stb_image.s"
+	@echo "... src/context.o"
+	@echo "... src/context.i"
+	@echo "... src/context.s"
 	@echo "... src/core.o"
 	@echo "... src/core.i"
 	@echo "... src/core.s"
-	@echo "... src/stb_image.o"
-	@echo "... src/stb_image.i"
-	@echo "... src/stb_image.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/render.o"
+	@echo "... src/render.i"
+	@echo "... src/render.s"
+	@echo "... src/setup.o"
+	@echo "... src/setup.i"
+	@echo "... src/setup.s"
 .PHONY : help
 
 

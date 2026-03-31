@@ -120,12 +120,12 @@ CMakeFiles/copy_assets.dir/clean:
 CMakeFiles/museum.dir/all: CMakeFiles/copy_assets.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target museum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target museum"
 .PHONY : CMakeFiles/museum.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/museum.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/museum.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/escazure/cpp_projects/museum/build/CMakeFiles 0
 .PHONY : CMakeFiles/museum.dir/rule
@@ -137,7 +137,7 @@ museum: CMakeFiles/museum.dir/rule
 # codegen rule for target.
 CMakeFiles/museum.dir/codegen: CMakeFiles/copy_assets.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/museum.dir/build.make CMakeFiles/museum.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Finished codegen for target museum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/escazure/cpp_projects/museum/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Finished codegen for target museum"
 .PHONY : CMakeFiles/museum.dir/codegen
 
 # clean rule for target.
