@@ -99,6 +99,6 @@ The project roadmap includes implementing additional graphics techniques such as
 
 ---
 
-This project is in the public domain. See [LICENSE.txt](LICENSE.txt)
+This project is in the public domain. See [UNLICENSE.txt](UNLICENSE.txt)
 
 ---
