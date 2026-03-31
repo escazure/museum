@@ -4,16 +4,10 @@ void render_depth_map(SceneResources& sr, glm::mat4& lightSpaceMatrix){
 	sr.depth_shader.use();
 	sr.depth_shader.set_mat4("lightSpaceMatrix", lightSpaceMatrix);
 		
-	glm::mat4 model = glm::mat4(1.0f);
-	model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
-	model = glm::scale(model, glm::vec3(3.0f, 1.0f, 3.0f));
-	sr.depth_shader.set_mat4("model", model);	
-	sr.scene_floor.Draw(sr.depth_shader);
-
 	if(g_context.cull_front_faces)
 		glCullFace(GL_FRONT);
 
-	model = glm::mat4(1.0f);
+	glm::mat4 model = glm::mat4(1.0f);
 	model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
 	sr.depth_shader.set_mat4("model", model);
 	sr.pedestal.Draw(sr.depth_shader);
