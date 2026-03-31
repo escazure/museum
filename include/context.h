@@ -19,8 +19,8 @@ class Context {
 	const float max_particle_lifetime = 5.0f;
 	float cloud_speed = 0.01f;
 	float scale = 1.0f;
-	float max_bias = 0.05f;
-	float min_bias = 0.005f;
+	float max_bias = 0.01f;
+	float min_bias = 0.001f;
 	float spot_inner_cutoff = 15.0f;
 	float spot_outer_cutoff = 20.0f;
 
